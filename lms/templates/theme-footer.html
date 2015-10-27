@@ -1,0 +1,126 @@
+## mako
+<%!
+  from django.core.urlresolvers import reverse
+  from django.utils.translation import ugettext as _
+  from branding.api import get_footer
+  from edxmako.shortcuts import marketing_link
+%>
+<% footer = get_footer(is_secure=is_secure) %>
+<%namespace name='static' file='static_content.html'/>
+
+<div class="wrapper wrapper-footer">
+  <footer id="footer-openedx"
+    ## When rendering the footer through the branding API,
+    ## the direction may not be set on the parent element,
+    ## so we set it here.
+    % if bidi:
+      dir=${bidi}
+    % endif
+  >
+    <div>
+      <nav class="colophon" aria-label="${_('About')}">
+        <ol class="nav-colophon">
+            % if marketing_link('ABOUT') != '#':
+            <li class="nav-colophon-01">
+              <a id="about" href="${marketing_link('ABOUT')}">${_('About')}</a>
+            </li>
+            % endif
+            % if marketing_link('FAQ') != '#':
+            <li class="nav-colophon-02">
+              <a id="faq" href="${marketing_link('FAQ')}">${_('FAQ')}</a>
+            </li>
+            % endif
+            % if marketing_link('PRICES') != '#':
+            <li class="nav-colophon-03">
+              <a id="prices" href="${marketing_link('PRICES')}">${_('Prices')}</a>
+            </li>
+            % endif
+            % if marketing_link('SUPPORT') != '#':
+            <li class="nav-colophon-04">
+              <a id="support" href="${marketing_link('SUPPORT')}">${_('Support Forum')}</a>
+            </li>
+            % endif
+            % if marketing_link('CONTACT') != '#':
+            <li class="nav-colophon-05">
+              <a id="contact" href="${marketing_link('CONTACT')}">${_('Contact')}</a>
+            </li>
+            % endif
+        </ol>
+      </nav>
+      <div class="social-media-links">
+        ## Facebook
+        <a href="${settings.ENV_TOKENS['PLATFORM_FACEBOOK_ACCOUNT']}" class="sm-link external" title="${_('Facebook')}" rel="noreferrer">
+          <span class="icon fa fa-facebook-square" aria-hidden="true"></span>
+          <span class="sr">${_("Like {platform_name} on Facebook")}</span>
+        </a>
+        ## Google+
+        <a href="${settings.ENV_TOKENS['PLATFORM_GOOGLE_PLUS_URL']}" class="sm-link external" title="${_('Google+')}" rel="noreferrer">
+          <span class="icon fa fa-google-plus-square" aria-hidden="true"></span>
+          <span class="sr">${_("Follow {platform_name} on Google+")}</span>
+        </a>
+        ## Twitter+
+        <a href="${settings.ENV_TOKENS['PLATFORM_TWITTER_URL']}" class="sm-link external" title="${_('Twitter')}" rel="noreferrer">
+          <span class="icon fa fa-twitter" aria-hidden="true"></span>
+          <span class="sr">${_("Follow {platform_name} on Twitter")}</span>
+        </a>
+        ## VK
+        <a href="${settings.ENV_TOKENS.get('PLATFORM_VK_URL', '#')}" class="sm-link external" title="${_('VK')}" rel="noreferrer">
+          <span class="icon fa fa-vk" aria-hidden="true"></span>
+          <span class="sr">${_("Follow {platform_name} on VK")}</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="wrapper-legal">
+      ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
+      <p class="copyright">
+        ${_(u"\u00A9 {year} {org_name}. All rights reserved except where noted. EdX, Open edX and the edX and Open EdX logos are registered trademarks or trademarks of edX Inc.").format(
+          org_name=settings.PLATFORM_NAME,
+          year=settings.COPYRIGHT_YEAR
+        )}
+      </p>
+
+      <nav class="nav-legal" aria-label="${_('Legal')}">
+        <ul>
+            % if marketing_link('PRIVACY') != '#':
+            <li class="nav-legal-01">
+              <a href="${marketing_link('PRIVACY')}">${_('Privacy Policy')}</a>
+            </li>
+            % endif
+            % if marketing_link('TOS') != '#':
+            <li class="nav-legal-02">
+              <a href="${marketing_link('TOS')}">${_('Terms of Service')}</a>
+            </li>
+            % endif
+        </ul>
+      </nav>
+    </div>
+
+    ## Please leave this link and use one of the logos provided
+    ## The OpenEdX link may be hidden when this view is served
+    ## through an API to partner sites (such as marketing sites or blogs),
+    ## which are not technically powered by OpenEdX.
+    % if not hide_openedx_link:
+    <div class="footer-about-openedx footer-about-edbox">
+      <p>
+        <a class="about-openedx" href="${footer['openedx_link']['url']}">
+          <img src="${footer['openedx_link']['image']}" alt="${footer['openedx_link']['title']}" width="120" />
+        </a>
+        <a href="https://lektorium.tv" class="lektorium" title="${_("Supported by Lektorium")}">
+          <img alt="${_("Supported by Lektorium")}" src="https://www.lektorium.tv/sites/lektorium.tv/files/static_attachments/lektorium_horisontal_color.png" width="140">
+        </a>
+     </p>
+    </div>
+    % endif
+  </footer>
+</div>
+% if include_dependencies:
+  <%static:js group='base_vendor'/>
+  <%static:css group='style-vendor'/>
+  <%include file="widgets/segment-io.html" />
+% endif
+% if footer_css_urls:
+  % for url in footer_css_urls:
+    <link rel="stylesheet" type="text/css" href="${url}"></link>
+  % endfor
+% endif

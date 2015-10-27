@@ -1,0 +1,175 @@
+## mako
+<%namespace name='static' file='static_content.html'/>
+<%namespace file='main.html' import="login_query, stanford_theme_enabled"/>
+<%!
+from django.core.urlresolvers import reverse
+from django.utils.translation import ugettext as _, pgettext
+from django.utils.http import urlquote_plus
+
+from microsite_configuration import microsite
+from ccx.overrides import get_current_ccx
+
+# App that handles subdomain specific branding
+import branding
+# app that handles site status messages
+from status.status import get_site_status_msg
+%>
+
+<%def name="custom_login_query()">${
+    u"?next={0}".format(urlquote_plus(reverse('dashboard'))) if request.path == '/' else login_query()
+}</%def>
+
+% if not settings.DEBUG and 'testbox' not in settings.SITE_NAME:
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter30413407 = new Ya.Metrika({id:30413407,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/30413407" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+% endif
+
+## Provide a hook for themes to inject branding on top.
+<%block name="navigation_top" />
+
+<%block>
+<%
+try:
+    course_id = course.id
+except:
+    # can't figure out a better way to get at a possibly-defined course var
+    course_id = None
+site_status_msg = get_site_status_msg(course_id)
+%>
+% if site_status_msg:
+<div class="site-status">
+  <div class="inner-wrapper">
+    <span class="white-error-icon"></span>
+    <p>${site_status_msg}</p>
+  </div>
+</div>
+% endif
+</%block>
+
+<header id="global-navigation" class="global ${"slim" if course else ""}" >
+  <nav class="nav-wrapper" aria-label="${_('Global')}">
+    <h1 class="logo logo-edbox">
+      <a href="${marketing_link('ROOT')}">
+        ed<span class="logo-suffix">box</span>
+      </a>
+    </h1>
+
+    % if course:
+    <h2 class="course-header">
+      <span class="provider-number">
+          ${course.display_org_with_default | h}
+          ${course.display_number_with_default | h}
+      </span>
+      <span class="course-title">
+      <%
+        display_name = course.display_name_with_default
+        if settings.FEATURES.get('CUSTOM_COURSES_EDX', False):
+          ccx = get_current_ccx(course.id)
+          if ccx:
+            display_name = ccx.display_name
+      %>
+      ${display_name}
+      </span>
+    </h2>
+    % endif
+
+    % if user.is_authenticated():
+    <ol class="nav-global authenticated">
+          <li class="nav-global-01">
+            <a href="//${settings.CMS_BASE}">${_('Create Courses')}</a>
+          </li>
+          % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
+          <li class="nav-global-02">
+            <a href="${marketing_link('COURSES')}">${_('Find Courses')}</a>
+          </li>
+          % endif
+        %if settings.FEATURES.get('ENABLE_SYSADMIN_DASHBOARD','') and user.is_staff:
+          <li>
+            ## Translators: This is short for "System administration".
+            <a href="${reverse('sysadmin')}">${_("Sysadmin")}</a>
+          </li>
+        %endif
+    </ol>
+    <div class="nav-wrapper nav-user-wrapper">
+    <ol class="user nav-user authenticated">
+      <li class="primary">
+        <a href="${reverse('dashboard')}" class="user-link">
+          <span class="sr">${_("Dashboard for:")}</span>
+          <div>
+          ${user.username}
+          </div>
+        </a>
+      </li>
+      <li class="primary">
+        <a href="#" class="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr">${_("More options dropdown")}</span><i class="fa fa-sort-desc" aria-hidden="true"></i></a>
+        <ul class="dropdown-menu" aria-label="More Options" role="menu">
+          <%block name="navigation_dropdown_menu_links" >
+            <li><a href="${reverse('dashboard')}">${pgettext("user dropdown menu", "Dashboard")}</a></li>
+            <li><a href="${reverse('learner_profile', kwargs={'username': user.username})}">${pgettext("user dropdown menu", "Personal Profile")}</a></li>
+            <li><a href="${reverse('account_settings')}">${pgettext("user dropdown menu", "Account Settings")}</a></li>
+          </%block>
+          <li><a href="${reverse('logout')}" role="menuitem">${_("Sign Out")}</a></li>
+        </ul>
+      </li>
+    </ol>
+    </div>
+    % else:
+    <ol class="nav-global">
+          <li class="nav-global-06">
+            <a href="//${settings.CMS_BASE}">${_('Create Courses')}</a>
+          </li>
+          % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
+          <li class="nav-global-05">
+            <a class="cta cta-discovery" href="/courses">${_("Find Courses")}</a>
+          </li>
+          % endif
+          <li class="nav-global-04">
+            <%block name="theme_header_registration_link" >
+            <a class="cta cta-register" href="/register${custom_login_query()}">${_("Register")}</a>
+            </%block>
+          </li>
+    </ol>
+
+    <div class="nav-wrapper nav-user-wrapper">
+      <ol class="nav-user">
+        <li class="nav-user-01">
+          <%block name="theme_header_login_link" >
+          <a class="cta cta-login" href="/login${custom_login_query()}">${_("Sign in")}</a>
+          </%block>
+        </li>
+      </ol>
+    </div>
+    % endif
+  </nav>
+</header>
+% if course:
+<!--[if lte IE 9]>
+<div class="ie-banner" aria-hidden="true">${_('<strong>Warning:</strong> Your browser is not fully supported. We strongly recommend using {chrome_link} or {ff_link}.').format(chrome_link='<a href="https://www.google.com/chrome" target="_blank">Chrome</a>', ff_link='<a href="http://www.mozilla.org/firefox" target="_blank">Firefox</a>')}</div>
+<![endif]-->
+% endif
+
+<%include file="help_modal.html"/>

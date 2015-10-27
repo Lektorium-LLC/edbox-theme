@@ -1,0 +1,50 @@
+<%!
+from django.utils.translation import ugettext as _
+from django.core.urlresolvers import reverse
+%>
+<%page args="online_help_token"/>
+<div class="wrapper-sock wrapper">
+  <ul class="list-actions list-cta">
+    <li class="action-item">
+      <a href="#sock" class="cta cta-show-sock"><i class="icon fa fa-question-circle"></i>
+        <span class="copy-show is-shown">${_("Looking for help with Studio?")}</span>
+        <span class="copy-hide is-hidden">${_("Hide Studio Help")}</span>
+      </a>
+    </li>
+  </ul>
+
+  <div class="wrapper-inner wrapper">
+    <section class="sock" id="sock">
+      <header>
+        <h2 class="title sr">${_("Studio Help")}</h2>
+      </header>
+
+      <div class="support">
+        <h3 class="title">${_("Studio Help")}</h3>
+
+        <div class="copy">
+           <p>${_("You can use the links below to get information about offline courses or to go to the {platform_name} Support Forum.").format(platform_name=settings.PLATFORM_NAME)}</p>
+        </div>
+
+        <ul class="list-actions">
+          <li class="action-item">
+            <a href="https://www.lektorium.tv/offline" rel="external" class="action action-primary">${_("Lektorium offline courses")}</a>
+            <span class="tip">${_("Lektorium offline courses")}</span>
+          </li>
+          <li class="action-item">
+            <a href="#" rel="external" class="action action-primary">${_("Support Forum")}</a>
+            <span class="tip">${_("Support Forum")}</span>
+          </li>
+          <%doc>
+          <li class="action-item">
+            <a href="#" rel="external" class="action action-primary">${_("Enroll in StudioX")}</a>
+            <span class="tip">${_("How to use Studio to build your course")}</span>
+          </li>
+          </%doc>
+        </ul>
+
+      </div>
+
+    </section>
+  </div>
+</div>
