@@ -48,26 +48,36 @@
         </ol>
       </nav>
       <div class="social-media-links">
-        ## Facebook
-        <a href="${settings.ENV_TOKENS['PLATFORM_FACEBOOK_ACCOUNT']}" class="sm-link external" title="${_('Facebook')}" rel="noreferrer">
+        <%
+            facebook_url = settings.ENV_TOKENS.get('PLATFORM_FACEBOOK_ACCOUNT', None)
+            twitter_url = settings.ENV_TOKENS.get('PLATFORM_TWITTER_URL', None)
+            google_plus_url = settings.ENV_TOKENS.get('PLATFORM_GOOGLE_PLUS_URL', None)
+            vk_url = settings.ENV_TOKENS.get('PLATFORM_VK_URL', None)
+        %>
+        % if facebook_url:
+        <a href="${facebook_url}" class="sm-link external" title="${_('Facebook')}" rel="noreferrer">
           <span class="icon fa fa-facebook-square" aria-hidden="true"></span>
-          <span class="sr">${_("Like {platform_name} on Facebook")}</span>
+          <span class="sr">${_("Like {platform_name} on Facebook").format(platform_name=settings.PLATFORM_NAME)}</span>
         </a>
-        ## Google+
-        <a href="${settings.ENV_TOKENS['PLATFORM_GOOGLE_PLUS_URL']}" class="sm-link external" title="${_('Google+')}" rel="noreferrer">
-          <span class="icon fa fa-google-plus-square" aria-hidden="true"></span>
-          <span class="sr">${_("Follow {platform_name} on Google+")}</span>
-        </a>
-        ## Twitter+
-        <a href="${settings.ENV_TOKENS['PLATFORM_TWITTER_URL']}" class="sm-link external" title="${_('Twitter')}" rel="noreferrer">
+        % endif
+        % if twitter_url:
+        <a href="${twitter_url}" class="sm-link external" title="${_('Twitter')}" rel="noreferrer">
           <span class="icon fa fa-twitter" aria-hidden="true"></span>
-          <span class="sr">${_("Follow {platform_name} on Twitter")}</span>
+          <span class="sr">${_("Follow {platform_name} on Twitter").format(platform_name=settings.PLATFORM_NAME)}</span>
         </a>
-        ## VK
-        <a href="${settings.ENV_TOKENS.get('PLATFORM_VK_URL', '#')}" class="sm-link external" title="${_('VK')}" rel="noreferrer">
+        % endif
+        % if google_plus_url:
+        <a href="${google_plus_url}" class="sm-link external" title="${_('Google+')}" rel="noreferrer">
+          <span class="icon fa fa-google-plus-square" aria-hidden="true"></span>
+          <span class="sr">${_("Follow {platform_name} on Google+").format(platform_name=settings.PLATFORM_NAME)}</span>
+        </a>
+        % endif
+        % if vk_url:
+        <a href="${vk_url}" class="sm-link external" title="${_('VK')}" rel="noreferrer">
           <span class="icon fa fa-vk" aria-hidden="true"></span>
-          <span class="sr">${_("Follow {platform_name} on VK")}</span>
+          <span class="sr">${_("Follow {platform_name} on VK").format(platform_name=settings.PLATFORM_NAME)}</span>
         </a>
+        % endif
       </div>
     </div>
 

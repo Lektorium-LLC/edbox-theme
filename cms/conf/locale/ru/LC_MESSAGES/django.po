@@ -2051,6 +2051,10 @@ msgstr ""
 "Open EdX являются зарегистрированными торговыми марками или торговыми "
 "марками edX Inc."
 
+#: theme-footer.html
+msgid "Follow {platform_name} on VK"
+msgstr "Подписаться на {platform_name} ВКонтакте"
+
 #: cms/djangoapps/contentstore/views/component.py
 #: lms/djangoapps/class_dashboard/dashboard_data.py
 msgid "Problem"
