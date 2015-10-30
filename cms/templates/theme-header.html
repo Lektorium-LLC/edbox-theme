@@ -226,9 +226,11 @@
               <li class="nav-item nav-course-settings-team">
                 <a href="${course_team_url}">${_("Course Team")}</a>
               </li>
+              % if user.is_staff:
               <li class="nav-item nav-course-settings-group-configurations">
                 <a href="${reverse('contentstore.views.group_configurations_list_handler', kwargs={'course_key_string': unicode(course_key)})}">${_("Group Configurations")}</a>
               </li>
+              % endif
               % if show_advanced_settings_link:
               <li class="nav-item nav-course-settings-advanced">
                 <a href="${advanced_settings_url}">${_("Advanced Settings")}</a>
