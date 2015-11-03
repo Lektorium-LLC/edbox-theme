@@ -1,11 +1,21 @@
+/***** missing variables *****/
+$gray: rgb(118,118,118);    // #767676 AA compliant
+$gray-d1: shade($gray,20%); // #656565
+$gray-l3: tint($gray,60%);  // #cbcbcb
+$m-blue-d1: rgb(23,144,199); // #1790C7
+$m-blue-d3: rgb(18,111,154); // #126F9A
+$edbox-light-gray: #f2f2f2;
+
 /***** Common theming *****/
+$edbox-link-color: #009fe6;
+$edbox-logo-suffix-color: #b92b6d;
 /* Header */
 header.global {
     box-sizing: border-box;
     padding: 0 20px !important;
     width: 100%;
     height: 76px;
-    background-color: #fff;
+    background-color: $white;
 
     &.slim {
         height: 50px !important;
@@ -20,12 +30,12 @@ header.global {
             font-size: 40px;
             font-stretch: normal;
             text-decoration: none !important;
-            color: #009fe6;
+            color: $edbox-link-color;
             letter-spacing: -3px;
             line-height: 1;
         }
         .logo-suffix {
-            color: #b92b6d !important;
+            color: $edbox-logo-suffix-color !important;
             max-height: 40px;
         }
     }
@@ -65,7 +75,7 @@ header.global {
         width: auto;
 
         a {
-            color: #656565;
+            color: $gray-d1;
             line-height: 1;
         }
         span {
@@ -110,22 +120,24 @@ header.global {
         display: inline-block;
         width: 100%;
         margin: 2px 10px 0 0;
-        font-size: 14px;
+        font-size: 14px !important;
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0 !important;
 
         a {
             display: table-cell;
-            color: #009fe6 !important;
+            color: $edbox-link-color !important;
             padding: 6px;
         }
         li {
             display: inline-block;
             white-space: nowrap;
-        }
-        li:last-child {
-            margin-right: 0;
+            @include margin-right($baseline);
+
+            &:last-child {
+                @include margin-right(0);
+            }
         }
     }
     .nav-user {
@@ -134,10 +146,9 @@ header.global {
         margin: 0 0 2px 0 !important;
 
         .cta-login {
-            box-shadow: 0 2px 1px 0 #0a4a67; /* check colors */
-            background: #126f9a;
-            /*background: #009fe6;*/
-            color: #fff;
+            box-shadow: 0 2px 1px 0 #0a4a67;
+            background: $m-blue-d3;
+            color: $white;
             padding: 10px 20px;
             text-align: center;
             border-radius: 2px;
@@ -148,10 +159,10 @@ header.global {
         }
         .cta-login{
             &:hover, &:active, &:focus {
-                background: #1790c7;
+                background: $m-blue-d1;
             }
             &:focus {
-                box-shadow: 0 0 6px 0 #126f9a;
+                box-shadow: $m-blue-d3;
             }
         }
     }
@@ -167,7 +178,7 @@ header.global {
 .wrapper-footer footer#footer-openedx {
     .social-media-links {
         text-align: right;
-        font-size: 24px; /* 150% */
+        font-size: 24px;
         margin-bottom: 30px;
     }
     .wrapper-legal, .footer-about-openedx {
@@ -176,6 +187,14 @@ header.global {
     }
     .wrapper-legal {
         padding-right: 2em;
+    }
+    .nav-legal li:first-child a:before {
+        @include margin-right(0);
+        content: "";
+    }
+    .nav-legal li a:before {
+        @include margin-right($baseline/4);
+        content: "-";
     }
     .footer-about-openedx {
         width: 270px !important;
@@ -238,10 +257,6 @@ header.global {
         .nav-legal li {
             display: inline-block;
         }
-        .nav-legal-02 a:before {
-            margin-right: ($baseline/4);
-            content: "-";
-        }
         a {
             @include transition(link-color 0.15s ease-in-out 0s, border 0.15s ease-in-out 0s);
             border-bottom: none;
@@ -255,8 +270,6 @@ header.global {
     }
 }
 /***** CMS-specific *****/
-$edbox-light-gray: #f2f2f2;
-
 .nav-account-user h3.title {
     padding: 0 !important;
     display: table-cell;
@@ -334,7 +347,7 @@ header.global nav, .nav-course {
             padding: 0 5px !important;
 
             &:hover {
-                border-color: #cbcbcb;
+                border-color: $gray-l3;
             }
         }
     }
@@ -376,4 +389,15 @@ header.global nav, .nav-course {
 }
 .view-dashboard .content-primary {
     width: 100%;
+}
+
+/* course actions buttons */
+.wrapper-mast .mast.has-actions .nav-actions .nav-item {
+    @include margin-right(0 !important);
+    @include margin-left($baseline/2);
+    margin-bottom: ($baseline/4);
+
+    &:first-child {
+    @include margin-left(0);
+    }
 }
