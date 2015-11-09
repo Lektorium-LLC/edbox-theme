@@ -118,7 +118,7 @@ msgid ""
 "transcript on YouTube. You can import the YouTube transcript or upload your "
 "own .srt transcript file."
 msgstr ""
-"В Конструкторе нет файла с субтитрами для этого видео, но мы нашли субтитры "
+"Вы ещё не загрузили файл с субтитрами для этого видео, но мы нашли субтитры "
 "на YouTube. Вы можете импортировать субтитры с YouTube или загрузить "
 "собственный .srt файл с субтитрами."
 
@@ -6041,7 +6041,7 @@ msgstr "Скачать сертификат пользователя"
 
 #: lms/djangoapps/support/static/support/templates/certificates_results.underscore
 msgid "Not available"
-msgstr "Не доступно"
+msgstr "Недоступно"
 
 #: lms/djangoapps/support/static/support/templates/certificates_results.underscore
 msgid "Regenerate"
