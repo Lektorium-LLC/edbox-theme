@@ -14,30 +14,21 @@ header.global {
     height: 76px;
     background-color: $white;
 
+    .logo img {
+        height: 60px;
+    }
+
     &.slim {
         height: 50px !important;
-    }
-    nav h1.logo-edbox {
-        padding-right: 15px !important;
-        text-rendering: optimizeLegibility;
 
-        a {
-            font-weight: bold;
-            font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-            font-size: 40px;
-            font-stretch: normal;
-            text-decoration: none !important;
-            color: $edbox-link-color;
-            letter-spacing: -3px;
-            line-height: 1;
+        .logo img {
+            height: 45px;
+            vertical-align: bottom;
         }
-        .logo-suffix {
-            color: $edbox-logo-suffix-color !important;
-            max-height: 40px;
+
+        h1.logo:before {
+            display: none !important;
         }
-    }
-    &.slim h1.logo:before {
-        display: none !important;
     }
 
     nav {
@@ -308,11 +299,6 @@ header.global {
 .wrapper-footer footer#footer-openedx .nav-legal .nav-legal-02 a:before {
     content: "";
     @include margin-right(0);
-}
-/* Index page */
-.home>header, section.find-courses header.search {
-    background-image: url('../themes/edbox/lms/images/edbox.png') !important;
-    background-position: center !important;
 }
 /* Courseware search page */
 .search-results .search-results-item .result-link {

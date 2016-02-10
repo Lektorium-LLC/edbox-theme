@@ -1,4 +1,4 @@
-<%namespace name='static' file='../static_content.html'/>
+<%namespace name='static' file='static_content.html'/>
 <%!
   from django.conf import settings
   from django.core.urlresolvers import reverse
@@ -48,7 +48,7 @@
   <nav class="nav-wrapper" aria-label="${_('Global')}">
     <h1 class="logo logo-edbox">
       <a href="//${settings.LMS_BASE}">
-        ed<span class="logo-suffix">box</span>
+        <img src="${static.url('themes/edbox/lms/images/eduardo.png')}" alt="${_("{platform_name} Home Page").format(platform_name=settings.PLATFORM_NAME)}" title="${_("{platform_name} Home Page").format(platform_name=settings.PLATFORM_NAME)}"/>
       </a>
     </h1>
 

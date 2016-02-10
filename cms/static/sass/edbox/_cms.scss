@@ -17,30 +17,21 @@ header.global {
     height: 76px;
     background-color: $white;
 
+    .logo img {
+        height: 60px;
+    }
+
     &.slim {
         height: 50px !important;
-    }
-    nav h1.logo-edbox {
-        padding-right: 15px !important;
-        text-rendering: optimizeLegibility;
 
-        a {
-            font-weight: bold;
-            font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-            font-size: 40px;
-            font-stretch: normal;
-            text-decoration: none !important;
-            color: $edbox-link-color;
-            letter-spacing: -3px;
-            line-height: 1;
+        .logo img {
+            height: 45px;
+            vertical-align: bottom;
         }
-        .logo-suffix {
-            color: $edbox-logo-suffix-color !important;
-            max-height: 40px;
+
+        &.slim h1.logo:before {
+            display: none !important;
         }
-    }
-    &.slim h1.logo:before {
-        display: none !important;
     }
 
     nav {
