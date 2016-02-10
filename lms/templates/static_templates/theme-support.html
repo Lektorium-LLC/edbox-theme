@@ -1,0 +1,41 @@
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">${_("Support")}</%block>
+
+<section class="container about support">
+<h1>${_("Support")}</h1>
+<form action="http://support.lektorium.tv/ru/api/submit_ticket" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="back" value="https://helpdeskeddy.com"/>
+	<input type="hidden" name="depart" id="depart" value="2"/>
+	<input type="hidden" name="type" id="type" value="0"/>
+	<input type="hidden" name="priority" id="priority" value="2"/>
+    % if user.is_authenticated():
+    <input type="hidden" name="name" id="name" value="${user.profile.name or user.username | h}">
+    <input type="hidden" name="email" id="email" value="${user.email}">
+    % endif
+    <ul>
+    % if not user.is_authenticated():
+        <li>
+        <label for="name">${_('Name')} *</label>
+            <input type="text" name="name" id="name" required="required">
+        </li>
+        <li>
+            <label for="email">${_('Email')} *</label>
+            <input type="email" name="email" id="email" required="required">
+        </li>
+    % endif
+        <li>
+            <label for="subject">${_('Subject')} *</label>
+            <input type="text" name="subject" id="subject" required="required">
+        </li>
+        <li>
+            <label for="description">${_('Description')}</label>
+            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+        </li>
+        <li>
+        <button type="submit">${_('Submit')}</button>
+        </li>
+    </ul>
+</form>
+</section>

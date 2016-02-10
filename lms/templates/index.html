@@ -18,37 +18,7 @@ from microsite_configuration import microsite
 %>
 
 <section class="home">
-  <header>
-    <div class="outer-wrapper">
-      <div class="title">
-        <hgroup>
-              ## Translators: 'Open edX' is a brand, please keep this untranslated. See http://openedx.org for more information.
-              <h1 style="color: red">${_(u"А здесь маркетинговый текст!")}</h1>
-              ## Translators: 'Open edX' is a brand, please keep this untranslated. See http://openedx.org for more information.
-              <h2 style="color: red">${_(u"Какая-нибудь волшебная информация о добрых нас, безграничных возможностях платформы и других поняшках =р")}</h2>
-        </hgroup>
-        % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
-          <div class="course-search">
-            <form method="get" action="/courses">
-              <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
-              <button class="search-button" type="submit">
-                <i class="icon fa fa-search" aria-hidden="true"></i>
-              </button>
-            </form>
-          </div>
-        % endif
-
-      </div>
-
-      % if show_homepage_promo_video:
-        <a href="#video-modal" class="media" rel="leanModal">
-          <div class="hero">
-            <div class="play-intro"></div>
-          </div>
-        </a>
-      % endif
-    </div>
-  </header>
+  <h1>Курсы от создателей Eduardo</h1>
   <section class="courses-container">
     <section class="highlighted-courses">
 
@@ -75,16 +45,16 @@ from microsite_configuration import microsite
   </section>
 </section>
 
+<%
+  youtube_video_id = homepage_promo_video_youtube_id
+%>
+% if youtube_video_id
 <section id="video-modal" class="modal home-page-video-modal video-modal">
   <div class="inner-wrapper">
-    <%
-      youtube_video_id = homepage_promo_video_youtube_id
-      if self.stanford_theme_enabled():
-        youtube_video_id = "2gmreZObCY4"
-    %>
     <iframe title="YouTube Video" width="640" height="360" src="//www.youtube.com/embed/${youtube_video_id}?showinfo=0" frameborder="0" allowfullscreen></iframe>
   </div>
 </section>
+% endif
 
 <%block name="js_extra">
    <script type="text/javascript">

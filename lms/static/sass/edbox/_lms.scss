@@ -3,6 +3,18 @@ $edbox-dd-hover: #3c3c3c;
 $edbox-light-gray: #f2f2f2;
 $gray-l3: tint($gray,60%);  // #cbcbcb
 
+$font-opensans-path: '../themes/edbox/lms/fonts/open-sans';
+
+@font-face {
+    font-family: "Open-Sans";
+    src: url("#{$font-opensans-path}/OpenSans-Regular.eot");
+    src: url("#{$font-opensans-path}/OpenSans-Regular.eot?#iefix") format("embedded-opentype"),
+    url("#{$font-opensans-path}/OpenSans-Regular.woff") format("woff"),
+    url("#{$font-opensans-path}/OpenSans-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 /***** Common theming *****/
 $edbox-link-color: #009fe6;
 $edbox-logo-suffix-color: #b92b6d;
@@ -300,6 +312,135 @@ header.global {
     content: "";
     @include margin-right(0);
 }
+/* Static pages */
+.container {
+  &.faq, &.tos, &.contact {
+    max-width: 40ex;
+
+    p, summary, .tos-list, details>ul, details>ol {
+      font-size: 120%;
+      line-height: 1.4;
+    }
+    h1 {
+        font-size: 200%;
+    }
+  }
+}
+.container.support {
+  max-width: 30rem;
+  min-width: 30rem;
+
+  ul {
+    padding-left:0;
+  }
+
+  li {
+    list-style-type: none;
+    margin-bottom: 10px;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  input, textarea, button {
+    widtH: 30rem;
+  }
+}
+.container.tos {
+  ul, li {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  li+li {
+    margin-top: 10px;
+  }
+
+  .tos-list>li {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+
+    ul {
+      text-transform: none;
+      font-weight: normal;
+    }
+  }
+}
+
+// faq details and corresponding polyfill
+.container.faq {
+
+  details {
+    border-bottom: solid 1px $edbox-light-gray;
+
+    &:last-child {
+      border-bottom-width: 0;
+    }
+
+    summary {
+      padding: ($baseline/2) 0;
+      font-weight: bold;
+      cursor: default;
+    }
+
+    ul {
+      list-style-type: "–";
+    }
+
+    p {
+      margin: 1em 0;
+    }
+  }
+}
+
+summary:before {
+  content: "+";
+  display: inline-block;
+  font-weight: 600;
+  padding: 0;
+  margin-right: 5px;
+  text-align: center;
+  width: 25px;
+  border-radius: 15px;
+}
+
+summary:hover:before {
+    background-color: $edbox-light-gray;
+}
+
+.details {
+  summary::-webkit-details-marker {
+    display: none
+  }
+  details[open] summary:before {
+    content: "×";
+  }
+}
+.no-details details {
+  &>* {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  &>summary, &[open]>* {
+    position: static;
+    visibility: visible;
+  }
+
+
+  & summary {
+    display: block;
+  }
+
+  &[open]>summary:before {
+    content:"×"
+  }
+}
+
 /* Courseware search page */
 .search-results .search-results-item .result-link {
     top: 0 !important;

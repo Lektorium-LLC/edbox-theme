@@ -2126,6 +2126,13 @@ msgstr "Настройки"
 msgid "Prices"
 msgstr "Тарифы"
 
+#: theme-footer.html, static_templates/theme-support.html
+msgid "Support"
+msgstr "Помощь"
+
+msgid "Subject"
+msgstr "Тема"
+
 #: widgets/sock.html
 msgid "Studio Help"
 msgstr "Помощь в использовании конструктора курсов"
