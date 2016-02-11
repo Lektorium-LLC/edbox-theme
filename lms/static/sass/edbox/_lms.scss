@@ -371,7 +371,7 @@ header.global {
 
   .tos-list>li {
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 600;
     margin-top: 20px;
 
     ul {
@@ -393,7 +393,7 @@ header.global {
 
     summary {
       padding: ($baseline/2) 0;
-      font-weight: bold;
+      font-weight: 600;
       cursor: default;
     }
 
