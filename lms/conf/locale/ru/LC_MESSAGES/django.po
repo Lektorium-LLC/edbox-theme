@@ -1235,6 +1235,14 @@ msgstr "Ответ на вопрос ниже:"
 msgid "The student's response to the question above:"
 msgstr "Ответ студента на вопрос ниже:"
 
+# Default dashboard text
+#: lms/templates/dashboard.html
+msgid "Looks like you haven't created any courses yet."
+msgstr "Похоже, вы ещё не создали ни одного курса."
+
+msgid "Create a New Course now!"
+msgstr "Создать курс прямо сейчас!"
+
 # Emails: see emails.po
 # #### Custom translations #####
 #: lms/djangoapps/ccx/views.py
