@@ -75,7 +75,7 @@ site_status_msg = get_site_status_msg(course_id)
     % if user.is_authenticated():
     <ol class="nav-global authenticated">
           <li class="nav-global-01">
-            <a href="//${settings.CMS_BASE}">${_('Create Courses')}</a>
+            <a href="//${settings.CMS_BASE}/home">${_('Create Courses')}</a>
           </li>
           % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
           <li class="nav-global-02">
@@ -115,7 +115,7 @@ site_status_msg = get_site_status_msg(course_id)
     % else:
     <ol class="nav-global">
           <li class="nav-global-06">
-            <a href="//${settings.CMS_BASE}">${_('Create Courses')}</a>
+            <a href="/login?next=${'//' + settings.CMS_BASE + '/home' | u}">${_('Create Courses')}</a>
           </li>
           % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
           <li class="nav-global-05">

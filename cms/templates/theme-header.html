@@ -76,7 +76,7 @@
     % if user.is_authenticated():
     <ol class="nav-global authenticated">
           <li class="nav-global-01">
-          <a href="${reverse('homepage')}">${_('Create Courses')}</a>
+          <a href="${reverse('home')}">${_('Create Courses')}</a>
           </li>
           % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
           <li class="nav-global-02">
@@ -123,7 +123,7 @@
     % else:
     <ol class="nav-global">
           <li class="nav-global-06">
-            <a href="${reverse('homepage')}">${_('Create Courses')}</a>
+            <a href="//${settings.LMS_BASE}/login?next=${'//' + request.get_host() + reverse('home') | u}">${_('Create Courses')}</a>
           </li>
           % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
           <li class="nav-global-05">
