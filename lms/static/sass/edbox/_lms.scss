@@ -356,7 +356,7 @@ header.global {
   }
 
   input, textarea, button {
-    widtH: 30rem;
+    widtH:  100%;
   }
 }
 .container.tos {
@@ -463,6 +463,13 @@ summary:hover:before {
   p {
     position: relative;
   }
+}
+
+.container.about .support-success {
+    background-color: #ffffe0;
+    border: solid 1px #ffdfa3;
+    text-align: center;
+    padding: 10px;
 }
 
 /* Courseware search page */

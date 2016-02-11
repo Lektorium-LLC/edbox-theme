@@ -5,8 +5,17 @@
 
 <section class="container about support">
 <h1>${_("Support")}</h1>
-<form action="http://support.lektorium.tv/ru/api/submit_ticket" method="POST" enctype="multipart/form-data">
-    <input type="hidden" name="back" value="https://helpdeskeddy.com"/>
+
+% if request.GET.get('success') == 'yes':
+<p class="support-success">Ваше сообщение отправлено в службу технической поддержки. Спасибо за обращение!</p>
+<script>
+$(function(){
+    try { window.history.pushState({'success': true},"", "${request.path}"); } catch (error) {} });
+</script>
+% endif
+<form action="http://support.lektorium.tv/ru/api/submit_ticket" method="POST" enctype="multipart/form-data" id="support-form">
+    ## <input type="hidden" name="back" value="https://helpdeskeddy.com"/>
+    <input type="hidden" name="back" value="http://lms.eduardo.studio/help?success=yes"/>
 	<input type="hidden" name="depart" id="depart" value="2"/>
 	<input type="hidden" name="type" id="type" value="0"/>
 	<input type="hidden" name="priority" id="priority" value="2"/>
