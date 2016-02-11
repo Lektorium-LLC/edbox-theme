@@ -324,7 +324,7 @@ header.global {
 }
 /* Static pages */
 .container {
-  &.faq, &.tos, &.contact {
+  &.faq, &.tos, &.contact, &.about-eduardo {
     max-width: 40ex;
 
     p, summary, .tos-list, details>ul, details>ol {
@@ -448,6 +448,20 @@ summary:hover:before {
 
   &[open]>summary:before {
     content:"×"
+  }
+}
+
+.container.about-eduardo {
+  max-width: 60rem;
+
+  .about-eduardo-person {
+    float: right;
+    opacity: 0.7;
+    margin-left: -50px;
+  }
+
+  p {
+    position: relative;
   }
 }
 
