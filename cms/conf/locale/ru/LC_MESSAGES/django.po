@@ -2147,7 +2147,7 @@ msgstr "Помощь в использовании конструктора ку
 
 #: widgets/sock.html
 msgid "Lektorium offline courses"
-msgstr "Очные программы проекта «Лекториум»"
+msgstr "Очные программы Лекториума"
 
 #: widgets/sock.html
 msgid "Support Forum"
