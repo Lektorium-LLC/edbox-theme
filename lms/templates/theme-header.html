@@ -67,7 +67,7 @@ site_status_msg = get_site_status_msg(course_id)
           if ccx:
             display_name = ccx.display_name
       %>
-      ${display_name}
+      ${display_name | h}
       </span>
     </h2>
     % endif
