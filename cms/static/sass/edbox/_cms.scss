@@ -33,6 +33,10 @@ header.global {
         height: 60px;
         max-width: inherit;
     }
+    .logo-beta img {
+        height: 68.5px;
+        padding-top: 8px;
+    }
 
     &.slim {
         height: 50px !important;
@@ -40,6 +44,10 @@ header.global {
         .logo img {
             height: 45px !important;
             vertical-align: bottom;
+        }
+        .logo-beta img {
+            height: 51px !important;
+            padding-top: 3px;
         }
 
         h1.logo {
@@ -278,6 +286,10 @@ header.global {
     }
 }
 /***** CMS-specific *****/
+header.global .nav-wrapper {
+    position: relative;
+    z-index: 200;
+}
 .nav-account-user h3.title {
     padding: 0 !important;
     display: table-cell;

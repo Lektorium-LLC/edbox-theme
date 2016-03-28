@@ -40,6 +40,10 @@ header.global {
         height: 60px;
         max-width: inherit;
     }
+    .logo-beta img {
+        height: 68.5px;
+        padding-top: 8px;
+    }
 
     &.slim {
         height: 50px !important;
@@ -47,6 +51,10 @@ header.global {
         .logo img {
             height: 45px !important;
             vertical-align: bottom;
+        }
+        .logo-beta img {
+            height: 51px !important;
+            padding-top: 3px;
         }
 
         h1.logo {
