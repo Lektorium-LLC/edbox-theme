@@ -31,18 +31,23 @@ header.global {
 
     .logo img {
         height: 60px;
+        max-width: inherit;
     }
 
     &.slim {
         height: 50px !important;
 
         .logo img {
-            height: 45px;
+            height: 45px !important;
             vertical-align: bottom;
         }
 
-        &.slim h1.logo:before {
-            display: none !important;
+        h1.logo {
+            padding-right: 10px !important;
+
+            &:before {
+                display: none !important;
+            }
         }
     }
 
@@ -244,7 +249,7 @@ header.global {
             font-size: 16px;
         }
         .nav-colophon li {
-            @include float(left);
+            display: inline-block;
             margin-right: 15px;
 
             &:last-child {

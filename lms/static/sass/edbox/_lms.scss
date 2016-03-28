@@ -38,18 +38,23 @@ header.global {
 
     .logo img {
         height: 60px;
+        max-width: inherit;
     }
 
     &.slim {
         height: 50px !important;
 
         .logo img {
-            height: 45px;
+            height: 45px !important;
             vertical-align: bottom;
         }
 
-        h1.logo:before {
-            display: none !important;
+        h1.logo {
+            padding-right: 10px !important;
+
+            &:before {
+                display: none !important;
+            }
         }
     }
 
@@ -69,10 +74,11 @@ header.global {
     .nav-global,
     .nav-user-wrapper {
         vertical-align: middle;
-        float: none !important;
         text-align: right;
+        float: none !important;
         line-height: 1 !important;
     }
+
     nav h1,
     .nav-global,
     .nav-user-wrapper {
