@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: info@lektorium.tv\n"
 "POT-Creation-Date: 2016-04-12 12:44+0000\n"
-"PO-Revision-Date: 2016-04-13 11:18:03.135537\n"
+"PO-Revision-Date: 2016-04-13 17:29:50.549561\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -432,6 +432,228 @@ msgstr ""
 "на YouTube. Вы можете импортировать субтитры с YouTube или загрузить "
 "собственный .srt файл с субтитрами."
 
+#. Translators: This message will be added to the front of messages of type
+#. error,
+#. e.g. "Error: required field is missing".
+#: cms/static/js/views/xblock_validation.js
+#: edx_proctoring/static/proctoring/js/views/proctored_exam_attempt_view.js
+#: lms/static/js/student_account/views/FinishAuthView.js
+#: lms/static/js/verify_student/views/payment_confirmation_step_view.js
+#: lms/static/js/verify_student/views/step_view.js
+#: lms/static/js/views/fields.js
+msgid "Error"
+msgstr "Ошибка"
+
+#: edx_proctoring/static/proctoring/js/views/proctored_exam_add_allowance_view.js
+#: lms/templates/student_account/register.underscore
+msgid "Required field"
+msgstr "Обязательное поле"
+
+#: edx_proctoring/static/proctoring/js/views/proctored_exam_allowance_view.js
+msgid "Additional Time (minutes)"
+msgstr "Дополнительное время (в минутах)"
+
+#: edx_proctoring/static/proctoring/js/views/proctored_exam_allowance_view.js
+msgid "Review Policy Exception"
+msgstr "Исключение при отсмотре"
+
+#: edx_proctoring/static/proctoring/js/views/proctored_exam_attempt_view.js
+msgid "Eligible"
+msgstr "Допущен"
+
+#: edx_proctoring/static/proctoring/js/views/proctored_exam_attempt_view.js
+msgid "Created"
+msgstr "Создан"
+
+#: edx_proctoring/static/proctoring/js/views/proctored_exam_attempt_view.js
+msgid "Download Software Clicked"
+msgstr "Перешёл к загрузке ПО"
+
+#: edx_proctoring/static/proctoring/js/views/proctored_exam_attempt_view.js
+msgid "Ready to start"
+msgstr "Готов начать"
+
+#: edx_proctoring/static/proctoring/js/views/proctored_exam_attempt_view.js
+msgid "Started"
+msgstr "Начал"
+
+#: edx_proctoring/static/proctoring/js/views/proctored_exam_attempt_view.js
+msgid "Ready to submit"
+msgstr "Готов отправить"
+
+#: edx_proctoring/static/proctoring/js/views/proctored_exam_attempt_view.js
+msgid "Declined"
+msgstr "Отменён"
+
+#: edx_proctoring/static/proctoring/js/views/proctored_exam_attempt_view.js
+msgid "Timed out"
+msgstr "Время истекло"
+
+#. Translators: A timestamp of when a task (eg, sending email) was submitted
+#. appears after this
+#: edx_proctoring/static/proctoring/js/views/proctored_exam_attempt_view.js
+#: lms/static/coffee/src/instructor_dashboard/util.js
+msgid "Submitted"
+msgstr "Отправлено"
+
+#: edx_proctoring/static/proctoring/js/views/proctored_exam_attempt_view.js
+msgid "Verified"
+msgstr "Подтвержден"
+
+#: edx_proctoring/static/proctoring/js/views/proctored_exam_attempt_view.js
+msgid "Rejected"
+msgstr "Отклонён"
+
+#: edx_proctoring/static/proctoring/js/views/proctored_exam_attempt_view.js
+msgid "Not reviewed"
+msgstr "Не отсмотрен"
+
+#: edx_proctoring/static/proctoring/js/views/proctored_exam_attempt_view.js
+msgid "Practice"
+msgstr "Пробное"
+
+#: edx_proctoring/static/proctoring/js/views/proctored_exam_attempt_view.js
+#: cms/templates/js/timed-examination-preference-editor.underscore
+msgid "Proctored"
+msgstr "Наблюдаемое"
+
+#: edx_proctoring/static/proctoring/js/views/proctored_exam_attempt_view.js
+#: cms/templates/js/timed-examination-preference-editor.underscore
+msgid "Timed"
+msgstr "Ограниченное по времени"
+
+#: edx_proctoring/static/proctoring/js/views/proctored_exam_attempt_view.js
+msgid "Are you sure you want to remove this student's exam attempt?"
+msgstr "Вы действительно хотите сбросить попытку сдачи для этого слушателя?"
+
+#: edx_proctoring/static/proctoring/js/views/proctored_exam_view.js
+msgid "Are you sure you want to leave this page? \n"
+msgstr "Вы действительно хотите покинуть эту страницу? \n"
+
+#: lms/static/coffee/src/instructor_dashboard/membership.js
+#: lms/static/js/student_account/views/account_settings_factory.js
+#: lms/static/js/student_profile/views/learner_profile_factory.js
+#: edx_proctoring/static/proctoring/templates/course_allowances.underscore
+#: edx_proctoring/static/proctoring/templates/student-proctored-exam-attempts.underscore
+#: lms/templates/financial-assistance/financial_assessment_form.underscore
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: lms/static/coffee/src/instructor_dashboard/membership.js
+#: edx_proctoring/static/proctoring/templates/course_allowances.underscore
+msgid "Email"
+msgstr "Адрес электронной почты"
+
+#: cms/static/js/views/assets.js cms/templates/js/asset-library.underscore
+#: edx_proctoring/static/proctoring/templates/student-proctored-exam-attempts.underscore
+#: lms/djangoapps/support/static/support/templates/certificates_results.underscore
+msgid "Type"
+msgstr "Тип"
+
+#: cms/templates/js/asset-library.underscore
+#: cms/templates/js/basic-modal.underscore
+#: edx_proctoring/static/proctoring/templates/course_allowances.underscore
+#: edx_proctoring/static/proctoring/templates/student-proctored-exam-attempts.underscore
+#: lms/templates/instructor/instructor_dashboard_2/enrollment-code-lookup-links.underscore
+msgid "Actions"
+msgstr "Действия"
+
+#: cms/templates/js/previous-video-upload-list.underscore
+#: edx_proctoring/static/proctoring/templates/student-proctored-exam-attempts.underscore
+#: lms/djangoapps/support/static/support/templates/certificates_results.underscore
+#: lms/templates/verify_student/enrollment_confirmation_step.underscore
+msgid "Status"
+msgstr "Статус"
+
+#: edx_proctoring/static/proctoring/templates/add-new-allowance.underscore
+msgid "Add a New Allowance"
+msgstr "Добавление нового послабления"
+
+#: edx_proctoring/static/proctoring/templates/add-new-allowance.underscore
+msgid "Special Exam"
+msgstr "Особое задание"
+
+#: edx_proctoring/static/proctoring/templates/add-new-allowance.underscore
+#: edx_proctoring/static/proctoring/templates/course_allowances.underscore
+msgid "Allowance Type"
+msgstr "Тип послабления"
+
+#: edx_proctoring/static/proctoring/templates/add-new-allowance.underscore
+msgid "Value"
+msgstr "Значение"
+
+#: edx_proctoring/static/proctoring/templates/add-new-allowance.underscore
+msgid "Username or Email"
+msgstr "Имя пользователя или адрес электронной почты"
+
+#: edx_proctoring/static/proctoring/templates/course_allowances.underscore
+msgid "Allowances"
+msgstr "Послабления"
+
+#: edx_proctoring/static/proctoring/templates/course_allowances.underscore
+msgid "Add Allowance"
+msgstr "Добавить послабление"
+
+#: edx_proctoring/static/proctoring/templates/course_allowances.underscore
+#: edx_proctoring/static/proctoring/templates/student-proctored-exam-attempts.underscore
+msgid "Exam Name"
+msgstr "Название задания"
+
+#: edx_proctoring/static/proctoring/templates/course_allowances.underscore
+msgid "Allowance Value"
+msgstr "Значение послабления"
+
+#: edx_proctoring/static/proctoring/templates/student-proctored-exam-attempts.underscore
+msgid "Time Limit"
+msgstr "Ограничение по времени"
+
+#: edx_proctoring/static/proctoring/templates/student-proctored-exam-attempts.underscore
+msgid "Started At"
+msgstr "Начат"
+
+#: edx_proctoring/static/proctoring/templates/student-proctored-exam-attempts.underscore
+msgid "Completed At"
+msgstr "Завершён"
+
+# Additions from LMS/Studio
+#: lms/static/coffee/src/instructor_dashboard/data_download.js
+msgid "Error generating proctored exam results. Please try again."
+msgstr ""
+"Ошибка создания отчёта о результатах наблюдаемого задания.  Пожалуйста, "
+"попробуйте ещё раз."
+
+#: cms/templates/js/course-outline.underscore
+msgid "Proctored Exam"
+msgstr "Наблюдаемое задание"
+
+#: cms/templates/js/course-outline.underscore
+msgid "Timed and Proctored Exam"
+msgstr "Наблюдаемое задание с ограничением по времени"
+
+#: cms/templates/js/timed-examination-preference-editor.underscore
+msgid ""
+"Learners can experience the proctoring software setup process and try some "
+"example problems. Make sure this practice exam is set up as an ungraded exam."
+msgstr ""
+"Слушатели могут попробовать настроить программное обеспечение для "
+"наблюдаемого задания и решить несколько показательных задач. Удостоверьтесь, "
+"что это практическое задание не оценивается."
+
+#: cms/templates/js/timed-examination-preference-editor.underscore
+msgid "This exam is proctored"
+msgstr "Это наблюдаемое задание"
+
+#: cms/templates/js/timed-examination-preference-editor.underscore
+msgid ""
+"Students can choose to take this exam with or without online proctoring, but "
+"only students who choose the proctored option are eligible for credit. "
+"Proctored exams must also be timed exams."
+msgstr ""
+"Студенты сами решают, сдавать ли это задание с наблюдением или нет, но курс "
+"может быть зачтён только студентам, выбравшим выполнение задание под "
+"наблюдением. Наблюдаемые экзамены должны проводиться с ограничением по "
+"времени."
+
 #: cms/static/coffee/src/views/tabs.js
 #: cms/static/coffee/src/xblock/cms.runtime.v1.js
 #: cms/static/js/certificates/views/signatory_details.js
@@ -551,20 +773,6 @@ msgstr "Загрузить файл"
 #: lms/static/js/views/fields.js
 msgid "Your changes have been saved."
 msgstr "Изменения сохранены."
-
-#. #-#-#-#-#  djangojs-partial.po (0.1a)  #-#-#-#-#
-#. Translators: This message will be added to the front of messages of type
-#. error,
-#. e.g. "Error: required field is missing".
-#: cms/static/js/views/xblock_validation.js
-#: lms/static/js/student_account/views/FinishAuthView.js
-#: lms/static/js/verify_student/views/payment_confirmation_step_view.js
-#: lms/static/js/verify_student/views/step_view.js
-#: lms/static/js/views/fields.js
-#: openassessment/xblock/static/js/openassessment-lms.min.js
-#: openassessment/xblock/static/js/src/lms/oa_response.js
-msgid "Error"
-msgstr "Ошибка"
 
 #. #-#-#-#-#  djangojs-partial.po (0.1a)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
@@ -3159,12 +3367,6 @@ msgid "Post body"
 msgstr "Текст сообщения"
 
 #: lms/static/coffee/src/instructor_dashboard/data_download.js
-msgid "Error generating proctored exam results. Please try again."
-msgstr ""
-"Ошибка создания отчёта о результатах очного экзамена.  Пожалуйста, "
-"попробуйте ещё раз."
-
-#: lms/static/coffee/src/instructor_dashboard/data_download.js
 msgid "Error generating student profile information. Please try again."
 msgstr "Ошибка при создании личных данных студента. Попробуйте еще раз."
 
@@ -3213,16 +3415,6 @@ msgstr "Последнее обновление: <%= timestamp %>"
 #: lms/static/coffee/src/instructor_dashboard/instructor_analytics.js
 msgid "<%= num_students %> students scored."
 msgstr "Оценено <%= num_students %> студентов."
-
-#: lms/static/coffee/src/instructor_dashboard/membership.js
-#: lms/static/js/student_account/views/account_settings_factory.js
-#: lms/static/js/student_profile/views/learner_profile_factory.js
-msgid "Username"
-msgstr "Имя пользователя"
-
-#: lms/static/coffee/src/instructor_dashboard/membership.js
-msgid "Email"
-msgstr "Электронная почта"
 
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 msgid "Revoke access"
@@ -3710,12 +3902,6 @@ msgstr "Идентификатор задачи"
 #: lms/static/coffee/src/instructor_dashboard/util.js
 msgid "Requester"
 msgstr "Запрашивающий"
-
-#. Translators: A timestamp of when a task (eg, sending email) was submitted
-#. appears after this
-#: lms/static/coffee/src/instructor_dashboard/util.js
-msgid "Submitted"
-msgstr "Присланное на расмотрение"
 
 #. Translators: The length of a task (eg, sending email) in seconds appears
 #. this
@@ -5186,11 +5372,6 @@ msgstr "Ваш файл был удален."
 msgid "Date Added"
 msgstr "Дата добавления"
 
-#: cms/static/js/views/assets.js cms/templates/js/asset-library.underscore
-#: lms/djangoapps/support/static/support/templates/certificates_results.underscore
-msgid "Type"
-msgstr "Тип"
-
 #: cms/static/js/views/assets.js
 msgid "File {filename} exceeds maximum size of {maxFileSizeInMBs} MB"
 msgstr ""
@@ -5884,12 +6065,6 @@ msgstr "Ссылки должны быть уникальными."
 msgid "Incorrect url format."
 msgstr "Неверный формат ссылки."
 
-#: cms/templates/js/asset-library.underscore
-#: cms/templates/js/basic-modal.underscore
-#: lms/templates/instructor/instructor_dashboard_2/enrollment-code-lookup-links.underscore
-msgid "Actions"
-msgstr "Действия"
-
 #: cms/templates/js/course-outline.underscore
 #: lms/templates/ccx/schedule.underscore
 msgid "Due Date"
@@ -5900,12 +6075,6 @@ msgstr "Срок сдачи"
 #: common/static/common/templates/discussion/pagination.underscore
 msgid "Previous"
 msgstr "Предыдущее"
-
-#: cms/templates/js/previous-video-upload-list.underscore
-#: lms/djangoapps/support/static/support/templates/certificates_results.underscore
-#: lms/templates/verify_student/enrollment_confirmation_step.underscore
-msgid "Status"
-msgstr "Статус"
 
 #: common/static/common/templates/image-modal.underscore
 msgid "Large"
@@ -7001,10 +7170,6 @@ msgid "Create your account"
 msgstr "Создать учётную запись"
 
 #: lms/templates/student_account/register.underscore
-msgid "Required field"
-msgstr "Обязательное поле"
-
-#: lms/templates/student_account/register.underscore
 msgid "Already have an account?"
 msgstr "Уже есть учётная запись?"
 
@@ -7767,14 +7932,6 @@ msgid "Due:"
 msgstr "Срок:"
 
 #: cms/templates/js/course-outline.underscore
-msgid "Proctored Exam"
-msgstr "Очный экзамен"
-
-#: cms/templates/js/course-outline.underscore
-msgid "Timed and Proctored Exam"
-msgstr "Очный экзамен с ограничением по времени"
-
-#: cms/templates/js/course-outline.underscore
 #: cms/templates/js/xblock-outline.underscore
 msgid "You haven't added any content to this course yet."
 msgstr "Вы ещё не добавили материалы курса."
@@ -8326,29 +8483,6 @@ msgstr ""
 #: cms/templates/js/timed-examination-preference-editor.underscore
 msgid "This exam is for practice only"
 msgstr "Это пробный экзамен"
-
-#: cms/templates/js/timed-examination-preference-editor.underscore
-msgid ""
-"Learners can experience the proctoring software setup process and try some "
-"example problems. Make sure this practice exam is set up as an ungraded exam."
-msgstr ""
-"Слушатели могут попробовать настроить программное обеспечение для очного "
-"экзамена и решить несколько показательных задач. Удостоверьтесь, что это "
-"практическое задание не оценивается."
-
-#: cms/templates/js/timed-examination-preference-editor.underscore
-msgid "This exam is proctored"
-msgstr "Это очный экзамен"
-
-#: cms/templates/js/timed-examination-preference-editor.underscore
-msgid ""
-"Students can choose to take this exam with or without online proctoring, but "
-"only students who choose the proctored option are eligible for credit. "
-"Proctored exams must also be timed exams."
-msgstr ""
-"Студенты сами решают, сдавать ли этот экзамен очно или нет, но курс может "
-"быть зачтён только студентам, выбравшим очную форму экзамена.  Очные "
-"экзамены должны проводиться с ограничением по времени."
 
 #: cms/templates/js/upload-dialog.underscore
 msgid "File upload succeeded"
