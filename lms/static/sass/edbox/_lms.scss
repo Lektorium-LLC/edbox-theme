@@ -494,3 +494,10 @@ summary:hover:before {
 .dashboard .profile-sidebar {
     border-top-width: 0 !important;
 }
+/* Upstream fix for combined registration form */
+.login-register .form-field label[for="register-terms_of_service"] {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px 5px 0 0 ;
+    width: 90%;
+}
