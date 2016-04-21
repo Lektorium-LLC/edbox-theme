@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: info@lektorium.tv\n"
 "POT-Creation-Date: 2016-04-12 12:44+0000\n"
-"PO-Revision-Date: 2016-04-21 17:06:19.853163\n"
+"PO-Revision-Date: 2016-04-21 19:33:35.409860\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -1671,6 +1671,23 @@ msgstr ""
 "курса»</strong>.  Чтобы установить даты начала курса и регистрации, "
 "отображаемые на странице «Описание курса», следуйте инструкциям своего "
 "методиста."
+
+# Overrides for course modes
+#: lms/templates/instructor/instructor_dashboard_2/course_info.html:15
+msgid "Verified"
+msgstr "Подтверждёные"
+
+#: lms/templates/instructor/instructor_dashboard_2/course_info.html:18
+msgid "Audit"
+msgstr "Вольнослушатели"
+
+#: lms/templates/instructor/instructor_dashboard_2/course_info.html:21
+msgid "Honor"
+msgstr "Слушатели"
+
+#: lms/templates/instructor/instructor_dashboard_2/course_info.html:24
+msgid "Professional"
+msgstr "Профессионалы"
 
 #: common/djangoapps/course_modes/models.py
 msgid "The time period before a course ends in which a course mode will expire"
@@ -4679,11 +4696,6 @@ msgid "You're enrolled as a verified student"
 msgstr "Вы зачислены на курс, ваша личность подтверждена"
 
 #: common/djangoapps/course_modes/helpers.py
-#: lms/templates/instructor/instructor_dashboard_2/course_info.html
-msgid "Verified"
-msgstr "Подтверждённые"
-
-#: common/djangoapps/course_modes/helpers.py
 msgid "ID Verified Ribbon/Badge"
 msgstr "Ленточка/значок подтверждённого статуса"
 
@@ -4757,16 +4769,6 @@ msgid ""
 msgstr ""
 "Поле SKU (stock keeping unit) для сервисов электронной коммерции, можно "
 "оставить пустым."
-
-#: common/djangoapps/course_modes/models.py
-#: lms/templates/instructor/instructor_dashboard_2/course_info.html
-msgid "Audit"
-msgstr "Бесплатный курс"
-
-#: common/djangoapps/course_modes/models.py
-#: lms/templates/instructor/instructor_dashboard_2/course_info.html
-msgid "Honor"
-msgstr "Сертификат Кодекса чести"
 
 #: common/djangoapps/course_modes/models.py
 msgid ""
@@ -16974,10 +16976,6 @@ msgid "Number of enrollees (admins, staff, and students) by track"
 msgstr ""
 "Количество зарегистрированных (администраторы, сотрудники и обучающиеся) по "
 "форме обучения"
-
-#: lms/templates/instructor/instructor_dashboard_2/course_info.html
-msgid "Professional"
-msgstr "Профессиональный"
 
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
 msgid "Basic Course Information"
