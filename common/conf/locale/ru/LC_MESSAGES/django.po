@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: info@lektorium.tv\n"
 "POT-Creation-Date: 2016-04-12 12:44+0000\n"
-"PO-Revision-Date: 2016-04-14 17:44:45.586607\n"
+"PO-Revision-Date: 2016-04-21 11:45:55.326547\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -2751,6 +2751,14 @@ msgstr "Личный профиль"
 #: lms/templates/courseware/course_about.html
 msgid "Enroll in course"
 msgstr "Записаться на курс"
+
+#: lms/templates/registration/password_reset_email.html
+msgid ""
+"You're receiving this e-mail because you requested a password reset for your "
+"user account at %(mktg_site_name)s."
+msgstr ""
+"Вы получили это сообщение, потому что запросили смену пароля своей учётной "
+"записи на %(mktg_site_name)s."
 
 #: common/lib/xmodule/xmodule/course_module.py
 #: common/lib/xmodule/xmodule/modulestore/inheritance.py
@@ -13047,7 +13055,7 @@ msgstr ""
 #. a field on the registration form meant to hold the user's username.
 #: openedx/core/djangoapps/user_api/views.py
 msgid "JaneDoe"
-msgstr "Мария Иванова"
+msgstr "maria_ivanova"
 
 #. Translators: This label appears above a dropdown menu on the registration
 #. form used to select the user's highest completed level of education.
@@ -13670,7 +13678,7 @@ msgstr "образец: Мария Иванова"
 #: themes/stanford-style/lms/templates/register-form.html
 #: themes/stanford-style/lms/templates/register-shib.html
 msgid "example: JaneDoe"
-msgstr "образец: Мария Иванова"
+msgstr "образец: maria_ivanova"
 
 #: cms/templates/register.html
 #: lms/templates/dashboard/_dashboard_info_language.html

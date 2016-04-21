@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: info@lektorium.tv\n"
 "POT-Creation-Date: 2016-04-12 12:44+0000\n"
-"PO-Revision-Date: 2016-04-14 17:44:45.614711\n"
+"PO-Revision-Date: 2016-04-21 11:45:55.354614\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -160,6 +160,11 @@ msgid ""
 "pages within your course:"
 msgstr ""
 "Следующее сообщение будет отображено внизу страниц содержания вашего курса:"
+
+# Override for timed exam
+#: lms/templates/courseware/proctored-exam-status.underscore
+msgid "End My Exam"
+msgstr "Завершить выполнение задания"
 
 #: lms/static/js/certificates/views/certificate_bulk_whitelist.js
 msgid "Uploaded file issues. Click on \"+\" to view."
@@ -767,6 +772,14 @@ msgstr "Начат"
 #: edx_proctoring/static/proctoring/templates/student-proctored-exam-attempts.underscore
 msgid "Completed At"
 msgstr "Завершён"
+
+#: lms/templates/courseware/proctored-exam-status.underscore
+msgid ""
+"You are taking \"{exam_link}\" as a {exam_type} exam. The timer on the right "
+"shows the time remaining in the exam."
+msgstr ""
+"Вы выполняете {exam_type} задание «{exam_link}». Таймер справа показывает "
+"оставшееся у вас время."
 
 #: cms/static/coffee/src/views/tabs.js
 #: cms/static/coffee/src/xblock/cms.runtime.v1.js
@@ -3442,6 +3455,12 @@ msgstr "Загрузка данных..."
 #: lms/static/coffee/src/instructor_dashboard/data_download.js
 msgid "Error getting issued certificates list."
 msgstr "Ошибка получения списка выпущенных сертификатов."
+
+#: lms/static/coffee/src/instructor_dashboard/data_download.js
+msgid "Error generating proctored exam results. Please try again."
+msgstr ""
+"Ошибка создания отчёта о результатах наблюдаемого испытания.  Пожалуйста, "
+"попробуйте ещё раз."
 
 #: lms/static/coffee/src/instructor_dashboard/data_download.js
 msgid "Error generating survey results. Please try again."
@@ -6728,10 +6747,6 @@ msgstr "Отметить экзамен, как завершённый"
 msgid "timed"
 msgstr "приурочен"
 
-#: lms/templates/courseware/proctored-exam-status.underscore
-msgid "End My Exam"
-msgstr "Завершить сдачу экзамена"
-
 #: lms/templates/discovery/course_card.underscore
 msgid "LEARN MORE"
 msgstr "ПОДРОБНЕЕ"
@@ -7938,6 +7953,10 @@ msgstr "Не оценивается"
 #: cms/templates/js/course-outline.underscore
 msgid "Practice proctored Exam"
 msgstr "Пробное наблюдаемое испытание"
+
+#: cms/templates/js/course-outline.underscore
+msgid "Proctored Exam"
+msgstr "Наблюдаемое испытание"
 
 #: cms/templates/js/course-outline.underscore
 msgid "Timed Exam"
@@ -9574,36 +9593,3 @@ msgstr "Необходимо заполнить список типов файл
 #: openassessment/xblock/static/js/src/studio/oa_edit_settings.js
 msgid "The following file types are not allowed: "
 msgstr "Следующие типы файлов недопустимы:"
-
-#~ msgid "Error generating proctored exam results. Please try again."
-#~ msgstr ""
-#~ "Ошибка создания отчёта о результатах наблюдаемого задания.  Пожалуйста, "
-#~ "попробуйте ещё раз."
-
-#~ msgid "Proctored Exam"
-#~ msgstr "Наблюдаемое задание"
-
-#~ msgid "Timed and Proctored Exam"
-#~ msgstr "Наблюдаемое задание с ограничением по времени"
-
-#~ msgid ""
-#~ "Learners can experience the proctoring software setup process and try "
-#~ "some example problems. Make sure this practice exam is set up as an "
-#~ "ungraded exam."
-#~ msgstr ""
-#~ "Слушатели могут попробовать настроить программное обеспечение для "
-#~ "наблюдаемого задания и решить несколько показательных задач. "
-#~ "Удостоверьтесь, что это практическое задание не оценивается."
-
-#~ msgid "This exam is proctored"
-#~ msgstr "Это наблюдаемое задание"
-
-#~ msgid ""
-#~ "Students can choose to take this exam with or without online proctoring, "
-#~ "but only students who choose the proctored option are eligible for "
-#~ "credit. Proctored exams must also be timed exams."
-#~ msgstr ""
-#~ "Студенты сами решают, сдавать ли это задание с наблюдением или нет, но "
-#~ "курс может быть зачтён только студентам, выбравшим выполнение задание под "
-#~ "наблюдением. Наблюдаемые экзамены должны проводиться с ограничением по "
-#~ "времени."
