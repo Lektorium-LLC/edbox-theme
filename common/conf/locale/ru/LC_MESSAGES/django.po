@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: info@lektorium.tv\n"
 "POT-Creation-Date: 2016-04-12 12:44+0000\n"
-"PO-Revision-Date: 2016-04-21 11:45:55.326547\n"
+"PO-Revision-Date: 2016-04-21 16:55:21.830605\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -12984,8 +12984,7 @@ msgstr "username@domain.com"
 #: openedx/core/djangoapps/user_api/views.py
 msgid "The email address you used to register with {platform_name}"
 msgstr ""
-"Это электронный адрес, который вы использовали для регистрации на "
-"{platform_name}"
+"Электронный адрес, который вы использовали для регистрации на {platform_name}"
 
 #. #-#-#-#-#  django-partial.po (0.1a)  #-#-#-#-#
 #. Translators: This label appears above a field on the login form
