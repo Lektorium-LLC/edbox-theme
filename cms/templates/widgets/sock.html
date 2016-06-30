@@ -23,14 +23,17 @@ from django.core.urlresolvers import reverse
         <h3 class="title">${_("Studio Help")}</h3>
 
         <div class="copy">
-           ## <p>${_("You can use the links below to get information about offline courses or to go to the {platform_name} Support Forum.").format(platform_name=settings.PLATFORM_NAME)}</p>
-           <p>Необходимые знания вы можете получить на очных курсах по созданию онлайн-курсов.</p>
+           <p>${_("You can get the essential knowledge about online course creation by attending the offline courses. Also you can enroll in free online course from Eduardo team.")}</p>
         </div>
 
         <ul class="list-actions">
           <li class="action-item">
             <a href="https://www.lektorium.tv/offline/?from=eduardo" rel="external" class="action action-primary">${_("Lektorium offline courses")}</a>
-            <span class="tip">${_("Lektorium offline courses")}</span>
+            <span class="tip">${_("How to use Open edX platform to build, run and support your course.")}</span>
+          </li>
+          <li class="action-item">
+            <a href="http://lms.eduardo.studio/courses/course-v1:Eduardo+edx1+1/about" rel="external" class="action action-primary">${_("Online course from Eduardo")}</a>
+            <span class="tip">${_("How to use Open edX platform to build, run and support your course.")}</span>
           </li>
           <%doc>
           <li class="action-item">

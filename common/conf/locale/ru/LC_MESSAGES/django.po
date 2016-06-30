@@ -2957,6 +2957,22 @@ msgstr ""
 "Вы можете задать интересующие Вас вопросы на Форуме поддержки пользователей "
 "проекта или записаться на очные курсы по созданию онлайн-курсов."
 
+#: widgets/sock.html
+msgid ""
+"You can get the essential knowledge about online course creation by attending "
+"the offline courses. Also you can enroll in free online course from Eduardo team."
+msgstr ""
+"Необходимые знания вы можете получить на очных курсах по созданию онлайн-курсов. "
+"Или пройдите бесплатный онлайн-курс от команды Eduardo."
+
+msgid ""
+"How to use Open edX platform to build, run and support your courses."
+msgstr ""
+"Научитесь создавать и поддерживать курсы на платформе Open edX."
+
+msgid "Online course from Eduardo"
+msgstr "Онлайн-курс от Eduardo"
+
 #: theme-footer.html
 msgid ""
 "© {year} {org_name}. All rights reserved except where noted. EdX, Open edX "
