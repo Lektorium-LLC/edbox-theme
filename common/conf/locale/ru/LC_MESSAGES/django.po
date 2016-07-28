@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: info@lektorium.tv\n"
 "POT-Creation-Date: 2016-04-12 12:44+0000\n"
-"PO-Revision-Date: 2016-04-25 17:19:19.104242\n"
+"PO-Revision-Date: 2016-07-28 10:11:33.230612\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -2957,22 +2957,6 @@ msgstr ""
 "Вы можете задать интересующие Вас вопросы на Форуме поддержки пользователей "
 "проекта или записаться на очные курсы по созданию онлайн-курсов."
 
-#: widgets/sock.html
-msgid ""
-"You can get the essential knowledge about online course creation by attending "
-"the offline courses. Also you can enroll in free online course from Eduardo team."
-msgstr ""
-"Необходимые знания вы можете получить на очных курсах по созданию онлайн-курсов. "
-"Или пройдите бесплатный онлайн-курс от команды Eduardo."
-
-msgid ""
-"How to use Open edX platform to build, run and support your courses."
-msgstr ""
-"Научитесь создавать и поддерживать курсы на платформе Open edX."
-
-msgid "Online course from Eduardo"
-msgstr "Онлайн-курс от Eduardo"
-
 #: theme-footer.html
 msgid ""
 "© {year} {org_name}. All rights reserved except where noted. EdX, Open edX "
@@ -2986,6 +2970,21 @@ msgstr ""
 #: theme-footer.html
 msgid "Follow {platform_name} on VK"
 msgstr "Подписаться на {platform_name} ВКонтакте"
+
+#: widgets/sock.html
+msgid ""
+"You can get the essential knowledge about online course creation by "
+"attending the offline courses. Also you can enroll in free online course "
+"from Eduardo team."
+msgstr ""
+"Необходимые знания вы можете получить на очных курсах по созданию онлайн-"
+"курсов. Или пройдите бесплатный онлайн-курс от команды Eduardo."
+
+msgid "How to use Open edX platform to build, run and support your courses."
+msgstr "Научитесь создавать и поддерживать курсы на платформе Open edX."
+
+msgid "Online course from Eduardo"
+msgstr "Онлайн-курс от Eduardo"
 
 #. Translators: these are tooltips that indicate the state of an assessment
 #. question
@@ -5272,7 +5271,7 @@ msgstr[0] ""
 "сменив {num} пароль."
 msgstr[1] ""
 "Вы пытаетесь установить старый пароль. Это можно сделать повторно, только "
-"сменив {num} паролей."
+"сменив {num} пароля."
 msgstr[2] ""
 "Вы пытаетесь установить старый пароль. Это можно сделать повторно, только "
 "сменив {num} паролей."
@@ -12164,7 +12163,7 @@ msgstr ""
 
 #: lms/templates/registration/password_reset_confirm.html
 msgid "The following errors occurred while processing your registration: "
-msgstr "При обработки вашей заявки на регистрацию произошли следующие ошибки:"
+msgstr "При обработке вашей заявки на регистрацию произошли следующие ошибки:"
 
 #: lms/templates/registration/password_reset_confirm.html
 msgid "You must complete all fields."
@@ -14643,7 +14642,7 @@ msgstr ""
 #: themes/stanford-style/lms/templates/register-form.html
 #: themes/stanford-style/lms/templates/register-shib.html
 msgid "The following errors occurred while processing your registration:"
-msgstr "При обработки вашей заявки на регистрацию произошли следующие ошибки:"
+msgstr "При обработке вашей заявки на регистрацию произошли следующие ошибки:"
 
 #: lms/templates/register-form.html lms/templates/register-shib.html
 #: themes/stanford-style/lms/templates/register-form.html
