@@ -6,18 +6,6 @@ $m-blue-d1: rgb(23,144,199); // #1790C7
 $m-blue-d3: rgb(18,111,154); // #126F9A
 $edbox-light-gray: #f2f2f2;
 
-$font-opensans-path: '../themes/edbox/cms/fonts/open-sans';
-
-@font-face {
-    font-family: "Open-Sans";
-    src: url("#{$font-opensans-path}/OpenSans-Regular.eot");
-    src: url("#{$font-opensans-path}/OpenSans-Regular.eot?#iefix") format("embedded-opentype"),
-    url("#{$font-opensans-path}/OpenSans-Regular.woff") format("woff"),
-    url("#{$font-opensans-path}/OpenSans-Regular.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-
 /***** Common theming *****/
 $edbox-link-color: #009fe6;
 $edbox-logo-suffix-color: #b92b6d;

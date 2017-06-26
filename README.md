@@ -1,24 +1,21 @@
 Overview
 ========
-This directory stores a default theme for an Open edX instance.
+This directory stores a comprehensive theme for Eduardo, Lektorium's platform based on Open edX.
 
-We've organized the tree to mimic the directory structure of the edX
-codebase so that it's easy to tell where the files will end up upon
-deploy. We'll use a special settings file to set the template and
-staticfiles paths properly to point to these files.
+The directory tree is organized to mostly mimic the directory structure of the
+edX codebase so that it's easy to tell where the files will end up upon deploy.
+The only exception is "common" directory containing files used both by cms and lms.
 
-Theme Authoring
+Enabling theme
 ===============
-To customize your theme:
-- Fork this repository.
-- Clone it into the theme directory next to your edx-platform directory and rename the theme directory to your new theme's name.
-- Upload your own image assets.
-- Edit the .scss file in static/sass/ and rename the file with your theme's name.
-- Edit the lms.envs.json file in edx-platform and set 'USE_CUSTOM_THEME' to true, and 'THEME_NAME' to your theme's name.
-- Edit the cms.envs.json file in edx-platform and set 'USE_CUSTOM_STUDIO_THEME' to true, and 'STUDIO_THEME_NAME' to your theme's name.
-
-Note: since we store themes for lms and cms in one directory, the .sass file is stored in directory static/sass/<your_theme_name>/
-
+- Create directory `/edx/app/edxapp/themes/edx-platform/`
+- Clone this repo
+- Enable theme in `lms.env.json` and `cms.env.json` located in `/edx/app/edxapp/`:
+    ENABLE_COMPREHENSIVE_THEMING: true
+    COMPREHENSIVE_THEME_DIRS: ["/edx/app/edxapp/themes/edx-platform"],
+    COMPREHENSIVE_THEME_LOCALE_PATHS: ["/edx/app/edxapp/themes/edx-platform/<your-theme>/conf/locale"]
+    DEFAULT_SITE_THEME: "<your-theme>"
+- Update lms/cms assets and restart the edxapp to enable the theme.
 
 License
 =======
