@@ -4,13 +4,15 @@ $gray-d1: shade($gray,20%); // #656565
 $gray-l3: tint($gray,60%);  // #cbcbcb
 $m-blue-d1: rgb(23,144,199); // #1790C7
 $m-blue-d3: rgb(18,111,154); // #126F9A
-$edbox-light-gray: #f2f2f2;
+$eduardo-light-gray: #f2f2f2;
+$footer-link-color: #0075b4;
 
 /***** Common theming *****/
-$edbox-link-color: #009fe6;
-$edbox-logo-suffix-color: #b92b6d;
+$eduardo-link-color: #009fe6;
+$eduardo-logo-suffix-color: #b92b6d;
+
 /* Header */
-header.global {
+.header-global {
     box-sizing: border-box;
     padding: 0 20px !important;
     width: 100%;
@@ -29,11 +31,11 @@ header.global {
     &.slim {
         height: 50px !important;
 
-        .logo img {
+        h1.logo img {
             height: 45px !important;
             vertical-align: bottom;
         }
-        .logo-beta img {
+        h1.logo-beta img {
             height: 51px !important;
             padding-top: 3px;
         }
@@ -47,7 +49,7 @@ header.global {
         }
     }
 
-    nav {
+    .wrapper-header {
         height: 100% !important;
         margin: 0 auto;
         padding: 0;
@@ -58,18 +60,21 @@ header.global {
         height: 100%;
     }
 
-    nav h1,
-    &.slim nav h2,
+    .wrapper-header h1,
+    &.slim .wrapper-header h2,
+    .nav-courseware,
     .nav-global,
-    .nav-user-wrapper {
+    .user {
         vertical-align: middle;
-        float: none !important;
         text-align: right;
+        float: none !important;
         line-height: 1 !important;
     }
-    nav h1,
+
+    .wrapper-header h1,
+    .nav-courseware,
     .nav-global,
-    .nav-user-wrapper {
+    .user {
         display: table-cell !important;
     }
 
@@ -90,7 +95,7 @@ header.global {
             opacity: 0.75;
             margin-right: .5ex;
         }
-        .course-title {
+        .course-name, .course-title {
             font-weight: bold;
             display: block;
             max-width: 450px;
@@ -131,7 +136,7 @@ header.global {
         a {
             display: table-cell;
             padding: 6px;
-            color: $edbox-link-color !important;
+            color: $eduardo-link-color !important;
             font-size: 14px !important;
         }
         li {
@@ -144,31 +149,10 @@ header.global {
             }
         }
     }
-    .nav-user {
+    .user {
         text-align: left !important;
         padding: 0 !important;
         margin: 0 0 2px 0 !important;
-
-        .cta-login {
-            box-shadow: 0 2px 1px 0 #0a4a67;
-            background: $m-blue-d3;
-            color: $white;
-            padding: 10px 20px;
-            text-align: center;
-            border-radius: 2px;
-            margin: 2px 0 2px 1em;
-            display: inline-block;
-            text-decoration: none;
-            line-height: 1;
-        }
-        .cta-login{
-            &:hover, &:active, &:focus {
-                background: $m-blue-d1;
-            }
-            &:focus {
-                box-shadow: $m-blue-d3;
-            }
-        }
     }
     .nav-account-user {
         @include margin-left(10px);
@@ -179,7 +163,14 @@ header.global {
     display: table-cell;
 }
 /* Footer */
-.wrapper-footer footer#footer-openedx {
+.wrapper-footer footer#footer-openedx, .wrapper-footer footer.primary {
+    .colophon {
+        width: auto;
+        float: none;
+    }
+    .nav-colophon {
+        float: left;
+    }
     .social-media-links {
         text-align: right;
         font-size: 24px;
@@ -235,10 +226,10 @@ header.global {
 .wrapper-footer {
     background-color: $white;
 
-    footer#footer-openedx {
+    footer.primary {
         .colophon {
             display: block;
-            width: 70%;
+            margin-right: 0;
         }
         .nav-colophon {
             margin: 5px 0 30px;
@@ -264,26 +255,58 @@ header.global {
         a {
             @include transition(link-color 0.15s ease-in-out 0s, border 0.15s ease-in-out 0s);
             border-bottom: none;
-            color: $ui-link-color;
             text-decoration: none !important;
 
             &:hover, &:focus, &:active {
-                border-bottom: 1px dotted $ui-link-color;
+                border-bottom: 1px dotted $footer-link-color;
             }
         }
     }
 }
 /***** CMS-specific *****/
-header.global .nav-wrapper {
-    position: relative;
-    z-index: 200;
-}
-.nav-account-user h3.title {
-    padding: 0 !important;
-    display: table-cell;
+.header-global {
+    .nav-account {
+        display: table-cell;
+        padding: 0;
+        top: 0;
+    }
+
+    .wrapper-header .nav-account-user h3.title {
+        padding: 0 !important;
+        display: table-cell;
+        border-width: 0;
+        box-shadow: none;
+        background-color: inherit;
+
+        &>ol {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+
+    .action-signin {
+        box-shadow: 0 2px 1px 0 #0a4a67;
+        background: $m-blue-d3;
+        color: $white;
+        padding: 10px 20px;
+        text-align: center;
+        border-radius: 2px;
+        margin: 2px 0 2px 1em;
+        display: inline-block;
+        text-decoration: none;
+        line-height: 1;
+
+        &:hover, &:active, &:focus {
+            background: $m-blue-d1;
+        }
+        &:focus {
+            box-shadow: $m-blue-d3;
+        }
+    }
 }
 
-header.global nav, .nav-course {
+
+.header-global nav, .nav-course {
     max-width: 1280px;
 }
 
@@ -291,10 +314,19 @@ header.global nav, .nav-course {
     position: relative;
 }
 
+.header-global .wrapper-header {
+    z-index: 102;
+    background-color: transparent;
+}
+
 .wrapper-header {
     z-index: 101;
     box-shadow: none !important;
-    background-color: $edbox-light-gray !important;
+    background-color: $eduardo-light-gray;
+
+    .wrapper-l {
+        background-color: $eduardo-light-gray;
+    }
 
     .nav-course {
         display: block !important;
@@ -304,22 +336,19 @@ header.global nav, .nav-course {
     }
 
     .nav-dd h3.title{
-        background: $edbox-light-gray;
-        border-color: $edbox-light-gray;
+        background: $eduardo-light-gray;
+        border-color: $eduardo-light-gray;
     }
 
+    .info-course {
+        display: table-cell;
+    }
     .course-title {
         display: block;
     }
 }
-.nav-user {
-    .title, .icon {
-        display: table-cell !important;
-        float: none !important;
-        padding: 5px;
-    }
-
-    .label, .nav-user .icon {
+.nav-account-user {
+    .label, .icon {
         display: table-cell !important;
         float: none !important;
         padding: 5px;
@@ -343,22 +372,6 @@ header.global nav, .nav-course {
     .fa-caret-down:hover {
         opacity: 1;
     }
-
-    &.authenticated {
-        .nav-user.authenticated .nav-sub a:hover {
-            color: $offBlack;
-        }
-        &>li {
-            margin: 0 0 0 20px !important;
-            border: solid 1px $white;
-            border-radius: 4px;
-            padding: 0 5px !important;
-
-            &:hover {
-                border-color: $gray-l3;
-            }
-        }
-    }
     .wrapper-nav-sub {
         z-index: 102;
         top: 40px !important;
@@ -366,7 +379,7 @@ header.global nav, .nav-course {
 
 }
 .wrapper-footer {
-    footer.primary .footer-about-openedx {
+    .footer-about-openedx {
         .lektorium {
             vertical-align: top;
             text-align: left;
@@ -383,6 +396,23 @@ header.global nav, .nav-course {
             }
         }
     }
+    footer.primary .footer-about-copyright {
+        width: auto;
+        margin-bottom: 8px;
+        color: $gray;
+    }
+    .footer-primary {
+        a, .nav-colophon li a:hover {
+        color: $footer-link-color;
+        }
+    }
+    .wrapper-legal {
+        font-size: 11px;
+    }
+}
+// studio help drawer
+.wrapper-sock .sock .support {
+    width: auto;
 }
 // hide external help
 .content-supplementary .external-help a {

@@ -1,0 +1,40 @@
+<%page expression_filter="h"/>
+<%namespace name='static' file='../static_content.html'/>
+<%!
+  from django.conf import settings
+  from django.core.urlresolvers import reverse
+  from django.utils.translation import ugettext as _, pgettext
+  from student.roles import GlobalStaff
+%>
+
+  <h3 class="title">
+    <span class="label">
+      <span class="label-prefix sr-only">${_("Currently signed in as:")}</span>
+      <a href="//${settings.LMS_BASE}/dashboard" class="account-username" title="${ user.username }">${ user.username }</a>
+    </span>
+    <span class="icon fa fa-caret-down ui-toggle-dd" aria-hidden="true"></span>
+  </h3>
+
+  <div class="wrapper wrapper-nav-sub">
+    <div class="nav-sub">
+      <ul>
+        <li class="nav-item nav-account-dashboard">
+          <a href="//${settings.LMS_BASE}/dashboard">${pgettext("user dropdown menu", "Dashboard")}</a>
+        </li>
+        <li class="nav-item">
+          <a href="//${settings.LMS_BASE}/u/${user.username}">${pgettext("user dropdown menu", "Personal Profile")}</a>
+        </li>
+        <li class="nav-item">
+          <a href="//${settings.LMS_BASE}/account/settings">${pgettext("user dropdown menu", "Account Settings")}</a>
+        </li>
+        % if GlobalStaff().has_user(user):
+        <li class="nav-item">
+          <a href="${reverse('maintenance:maintenance_index')}">${_("Maintenance")}</a>
+        </li>
+        % endif
+        <li class="nav-item nav-account-signout">
+          <a class="action action-signout" href="${reverse('logout')}">${_("Sign Out")}</a>
+        </li>
+      </ul>
+    </div>
+  </div>

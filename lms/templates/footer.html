@@ -1,4 +1,5 @@
 ## mako
+<%page expression_filter="h"/>
 <%!
   from django.core.urlresolvers import reverse
   from django.utils.translation import ugettext as _
@@ -9,7 +10,7 @@
 <%namespace name='static' file='static_content.html'/>
 
 <div class="wrapper wrapper-footer">
-  <footer id="footer-openedx"
+  <footer id="footer-openedx" class="grid-container"
     ## When rendering the footer through the branding API,
     ## the direction may not be set on the parent element,
     ## so we set it here.
@@ -17,9 +18,9 @@
       dir=${bidi}
     % endif
   >
-    <div>
-      <nav class="colophon" aria-label="${_('About')}">
-        <ol class="nav-colophon">
+    <div class="colophon">
+      <nav class="nav-colophon" aria-label="${_('About')}">
+        <ol>
             % if marketing_link('ABOUT') != '#':
             <li class="nav-colophon-01">
               <a id="about" href="${marketing_link('ABOUT')}">${_('About')}</a>
@@ -83,12 +84,7 @@
 
     <div class="wrapper-legal">
       ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
-      <p class="copyright">
-        ${_(u"\u00A9 {year} {org_name}. All rights reserved except where noted. EdX, Open edX and the edX and Open EdX logos are registered trademarks or trademarks of edX Inc.").format(
-          org_name=settings.PLATFORM_NAME,
-          year=settings.COPYRIGHT_YEAR
-        )}
-      </p>
+      <p class="copyright">${footer['copyright']}</p>
 
       <nav class="nav-legal" aria-label="${_('Legal')}">
         <ul>
@@ -111,15 +107,15 @@
     ## through an API to partner sites (such as marketing sites or blogs),
     ## which are not technically powered by OpenEdX.
     % if not hide_openedx_link:
-    <div class="footer-about-openedx footer-about-edbox">
+    <div class="footer-about-openedx footer-about-eduardo">
       <p>
-        <a class="about-openedx" href="${footer['openedx_link']['url']}">
+        <a href="${footer['openedx_link']['url']}">
           <img src="${footer['openedx_link']['image']}" alt="${footer['openedx_link']['title']}" width="120" />
         </a>
         <a href="https://lektorium.tv" class="lektorium" title="${_("Supported by Lektorium")}">
           <img alt="${_("Supported by Lektorium")}" src="https://www.lektorium.tv/sites/lektorium.tv/files/static_attachments/lektorium_horisontal_color.png" width="140">
         </a>
-     </p>
+      </p>
     </div>
     % endif
   </footer>
@@ -128,6 +124,7 @@
   <%static:js group='base_vendor'/>
   <%static:css group='style-vendor'/>
   <%include file="widgets/segment-io.html" />
+  <%include file="widgets/segment-io-footer.html" />
 % endif
 % if footer_css_urls:
   % for url in footer_css_urls:

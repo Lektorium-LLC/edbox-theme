@@ -1,0 +1,4 @@
+# .gitignore for eduardo comprehensive theme
+### Static assets pipeline artifacts
+lms/static/css/
+cms/static/css/

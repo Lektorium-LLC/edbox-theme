@@ -1,41 +1,45 @@
+## mako
 <%!
 from django.utils.translation import ugettext as _
 from django.core.urlresolvers import reverse
+from django.conf import settings
 from edxmako.shortcuts import marketing_link
+%>
+<%
+def get_marketing_link(link_name):
+    return u'//{}/{}'.format(settings.LMS_BASE, settings.MKTG_URL_LINK_MAP.get(link_name, '#'))
 %>
 
 <div class="wrapper-footer wrapper">
-  <footer id="footer-openedx" class="primary" role="contentinfo">
-    <div>
-      <nav class="colophon" aria-label="${_('About')}">
+  <footer class="primary" role="contentinfo">
+      <div class="colophon">
         <ol class="nav-colophon">
-            % if marketing_link('ABOUT') != '#':
+            % if is_marketing_link_set('ABOUT'):
             <li class="nav-colophon-01">
-              <a id="about" href="${marketing_link('ABOUT')}">${_('About')}</a>
+              <a id="about" href="${get_marketing_link('ABOUT')}">${_('About')}</a>
             </li>
             % endif
-            % if marketing_link('FAQ') != '#':
+            % if is_marketing_link_set('FAQ'):
             <li class="nav-colophon-02">
-              <a id="faq" href="${marketing_link('FAQ')}">${_('FAQ')}</a>
+              <a id="faq" href="${get_marketing_link('FAQ')}">${_('FAQ')}</a>
             </li>
             % endif
-            % if marketing_link('PRICES') != '#':
+            % if is_marketing_link_set('PRICES'):
             <li class="nav-colophon-03">
-              <a id="prices" href="${marketing_link('PRICES')}">${_('Prices')}</a>
+              <a id="prices" href="${get_marketing_link('PRICES')}">${_('Prices')}</a>
             </li>
             % endif
-            % if marketing_link('HELP') != '#':
+            % if is_marketing_link_set('HELP'):
             <li class="nav-colophon-04">
-              <a id="support" href="${marketing_link('HELP')}">${_('Support')}</a>
+              <a id="support" href="${get_marketing_link('HELP')}">${_('Support')}</a>
             </li>
             % endif
-            % if marketing_link('CONTACT') != '#':
+            % if is_marketing_link_set('CONTACT'):
             <li class="nav-colophon-05">
-              <a id="contact" href="${marketing_link('CONTACT')}">${_('Contact')}</a>
+              <a id="contact" href="${get_marketing_link('CONTACT')}">${_('Contact')}</a>
             </li>
             % endif
         </ol>
-      </nav>
       <div class="social-media-links">
         <%
             facebook_url = settings.ENV_TOKENS.get('PLATFORM_FACEBOOK_ACCOUNT', None)
@@ -68,48 +72,46 @@ from edxmako.shortcuts import marketing_link
         </a>
         % endif
       </div>
+      </div>
+
+    <div class="wrapper-legal" aria-label="{_('Legal')}">
+      <div class="footer-about-copyright">
+        ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
+        <p>
+          ## Translators: 'EdX', 'edX', 'Studio', and 'Open edX' are trademarks of 'edX Inc.'. Please do not translate any of these trademarks and company names.
+            © ${_("EdX, Open edX, Studio, and the edX and Open edX logos are registered trademarks or trademarks of {link_start}edX Inc.{link_end}").format(
+            link_start=u"<a data-rel='edx.org' href='https://www.edx.org/'>",
+            link_end=u"</a>"
+          )}
+        </p>
+      </div>
+      % if is_any_marketing_link_set(['TOS', 'PRIVACY']):
+        <nav class="nav-legal">
+          <ol>
+            % if is_marketing_link_set('TOS'):
+              <li class="nav-item nav-peripheral-tos">
+                <a href="${get_marketing_link('TOS')}">${_("Terms of Service")}</a>
+              </li>
+            % endif
+            % if is_marketing_link_set('PRIVACY'):
+              <li class="nav-item nav-peripheral-pp">
+                <a href="${get_marketing_link('PRIVACY')}">${_("Privacy Policy")}</a>
+              </li>
+            % endif
+          </ol>
+        </nav>
+      % endif
     </div>
 
-    <div class="wrapper-legal">
-      ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
-      <p class="copyright">
-        ${_(u"\u00A9 {year} {org_name}. All rights reserved except where noted. EdX, Open edX and the edX and Open EdX logos are registered trademarks or trademarks of edX Inc.").format(
-          org_name=settings.PLATFORM_NAME,
-          year=settings.COPYRIGHT_YEAR
-        )}
-      </p>
-      <nav class="nav-legal" aria-label="${_('Legal')}">
-        <ul>
-            % if marketing_link('PRIVACY') != '#':
-            <li class="nav-legal-01">
-              <a href="${marketing_link('PRIVACY')}">${_('Privacy Policy')}</a>
-            </li>
-            % endif
-            % if marketing_link('TOS') != '#':
-            <li class="nav-legal-02">
-              <a href="${marketing_link('TOS')}">${_('Terms of Service')}</a>
-            </li>
-            % endif
-        </ul>
-      </nav>
-    </div>
-
-    ## Please leave this link and use one of the logos provided
-    ## The OpenEdX link may be hidden when this view is served
-    ## through an API to partner sites (such as marketing sites or blogs),
-    ## which are not technically powered by OpenEdX.
-    % if not hide_openedx_link:
-    <div class="footer-about-openedx footer-about-edbox">
-      <p>
+      <div class="footer-about-openedx footer-about-eduardo">
+       <p>
         <a class="about-openedx" href="http://open.edx.org" title="${_("Powered by Open edX")}">
           <img alt="${_("Powered by Open edX")}" src="https://files.edx.org/openedx-logos/edx-openedx-logo-tag.png">
         </a>
         <a class="lektorium" href="https://lektorium.tv" title="${_("Supported by Lektorium")}">
           <img alt="${_("Supported by Lektorium")}" src="https://www.lektorium.tv/sites/lektorium.tv/files/static_attachments/lektorium_horisontal_color.png" width="120">
         </a>
-     </p>
-    </div>
-    % endif
+       </p>
+      </div>
   </footer>
 </div>
-

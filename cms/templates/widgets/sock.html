@@ -6,7 +6,7 @@ from django.core.urlresolvers import reverse
 <div class="wrapper-sock wrapper">
   <ul class="list-actions list-cta">
     <li class="action-item">
-      <a href="#sock" class="cta cta-show-sock"><i class="icon fa fa-question-circle"></i>
+      <a href="#sock" class="cta cta-show-sock"><span class="icon fa fa-question-circle" aria-hidden="true"></span>
         <span class="copy-show is-shown">${_("Looking for help with Studio?")}</span>
         <span class="copy-hide is-hidden">${_("Hide Studio Help")}</span>
       </a>
@@ -14,41 +14,48 @@ from django.core.urlresolvers import reverse
   </ul>
 
   <div class="wrapper-inner wrapper">
-    <section class="sock" id="sock">
-      <header>
-        <h2 class="title sr">${_("Studio Help")}</h2>
-      </header>
-
+    <section class="sock" id="sock" aria-labelledby="sock-heading">
+        <h2 id="sock-heading" class="title sr-only">${_("Studio Help")}</h2>
       <div class="support">
         <h3 class="title">${_("Studio Help")}</h3>
 
         <div class="copy">
            <p>${_("You can get the essential knowledge about online course creation by attending the offline courses. Also you can enroll in free online course from Eduardo team.")}</p>
         </div>
+        <%!
+        from django.conf import settings
+
+        partner_email = settings.PARTNER_SUPPORT_EMAIL
+
+        links = [{
+            'href': 'https://www.lektorium.tv/offline/?from=eduardo',
+            'sr_mouseover_text': _('How to use Open edX platform to build, run and support your course.'),
+            'text': _('Lektorium offline courses'),
+            'condition': True
+        }, {
+            'href': 'http://lms.eduardo.studio/courses/course-v1:Eduardo+edx1+1/about',
+            'sr_mouseover_text': _('How to use Open edX platform to build, run and support your course.'),
+            'text': _('Online course from Eduardo'),
+            'condition': True
+        }, {
+            'href': 'mailto:{email}'.format(email=partner_email),
+            'sr_mouseover_text': _('Send an email to {email}').format(email=partner_email),
+            'text': _('Contact Us'),
+            'condition': bool(partner_email)
+        }]
+        %>
 
         <ul class="list-actions">
-          <li class="action-item">
-            <a href="https://www.lektorium.tv/offline/?from=eduardo" rel="external" class="action action-primary">${_("Lektorium offline courses")}</a>
-            <span class="tip">${_("How to use Open edX platform to build, run and support your course.")}</span>
-          </li>
-          <li class="action-item">
-            <a href="http://lms.eduardo.studio/courses/course-v1:Eduardo+edx1+1/about" rel="external" class="action action-primary">${_("Online course from Eduardo")}</a>
-            <span class="tip">${_("How to use Open edX platform to build, run and support your course.")}</span>
-          </li>
-          <%doc>
-          <li class="action-item">
-            <a href="#" rel="external" class="action action-primary">${_("Support Forum")}</a>
-            <span class="tip">${_("Support Forum")}</span>
-          </li>
-          <li class="action-item">
-            <a href="#" rel="external" class="action action-primary">${_("Enroll in StudioX")}</a>
-            <span class="tip">${_("How to use Studio to build your course")}</span>
-          </li>
-          </%doc>
+          % for link in links:
+            % if link['condition']:
+              <li class="action-item">
+                <a href="${link['href']}" title="${link['sr_mouseover_text']}" rel="external" class="action action-primary">${link['text']}</a>
+                <span class="tip">${link['sr_mouseover_text']}</span>
+              </li>
+            %endif
+          % endfor
         </ul>
-
       </div>
-
     </section>
   </div>
 </div>

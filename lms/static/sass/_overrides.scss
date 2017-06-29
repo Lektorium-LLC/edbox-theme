@@ -1,13 +1,13 @@
 /***** additional colors *****/
-$edbox-dd-hover: #3c3c3c;
-$edbox-light-gray: #f2f2f2;
-$gray-l3: tint($gray,60%);  // #cbcbcb
+$eduardo-dd-hover: #3c3c3c;
+$eduardo-light-gray: #f2f2f2;
 
 /***** Common theming *****/
-$edbox-link-color: #009fe6;
-$edbox-logo-suffix-color: #b92b6d;
+$eduardo-link-color: #009fe6;
+$eduardo-logo-suffix-color: #b92b6d;
+
 /* Header */
-header.global {
+.header-global {
     box-sizing: border-box;
     padding: 0 20px !important;
     width: 100%;
@@ -26,11 +26,11 @@ header.global {
     &.slim {
         height: 50px !important;
 
-        .logo img {
+        h1.logo img {
             height: 45px !important;
             vertical-align: bottom;
         }
-        .logo-beta img {
+        h1.logo-beta img {
             height: 51px !important;
             padding-top: 3px;
         }
@@ -44,7 +44,7 @@ header.global {
         }
     }
 
-    nav {
+    .wrapper-header {
         height: 100% !important;
         margin: 0 auto;
         padding: 0;
@@ -55,19 +55,21 @@ header.global {
         height: 100%;
     }
 
-    nav h1,
-    &.slim nav h2,
+    .wrapper-header h1,
+    &.slim .wrapper-header h2,
+    .nav-courseware,
     .nav-global,
-    .nav-user-wrapper {
+    .user {
         vertical-align: middle;
         text-align: right;
         float: none !important;
         line-height: 1 !important;
     }
 
-    nav h1,
+    .wrapper-header h1,
+    .nav-courseware,
     .nav-global,
-    .nav-user-wrapper {
+    .user {
         display: table-cell !important;
     }
 
@@ -88,7 +90,7 @@ header.global {
             opacity: 0.75;
             margin-right: .5ex;
         }
-        .course-title {
+        .course-name, .course-title {
             font-weight: bold;
             display: block;
             max-width: 450px;
@@ -129,7 +131,7 @@ header.global {
         a {
             display: table-cell;
             padding: 6px;
-            color: $edbox-link-color !important;
+            color: $eduardo-link-color !important;
             font-size: 14px !important;
         }
         li {
@@ -142,31 +144,10 @@ header.global {
             }
         }
     }
-    .nav-user {
+    .user {
         text-align: left !important;
         padding: 0 !important;
         margin: 0 0 2px 0 !important;
-
-        .cta-login {
-            box-shadow: 0 2px 1px 0 #0a4a67;
-            background: $m-blue-d3;
-            color: $white;
-            padding: 10px 20px;
-            text-align: center;
-            border-radius: 2px;
-            margin: 2px 0 2px 1em;
-            display: inline-block;
-            text-decoration: none;
-            line-height: 1;
-        }
-        .cta-login{
-            &:hover, &:active, &:focus {
-                background: $m-blue-d1;
-            }
-            &:focus {
-                box-shadow: 0 0 6px 0 $m-blue-d3;
-            }
-        }
     }
     .nav-account-user {
         @include margin-left(10px);
@@ -178,6 +159,13 @@ header.global {
 }
 /* Footer */
 .wrapper-footer footer#footer-openedx {
+    .colophon {
+        width: auto;
+        float: none;
+    }
+    .nav-colophon {
+        float: left;
+    }
     .social-media-links {
         text-align: right;
         font-size: 24px;
@@ -230,8 +218,8 @@ header.global {
     }
 }
 /***** LMS-specific *****/
-header.global {
-    .nav-wrapper {
+.header-global {
+    .wrapper-header {
         padding-left: 20px;
         padding: 0 !important;
     }
@@ -239,18 +227,13 @@ header.global {
         @include margin-right($baseline !important);
     }
 
-    .nav-user {
-        border: solid 1px #fff;
-        border-radius: 4px;
+    .user {
         padding: 1px 5px !important;
 
-        &.authenticated:hover {
-            border-color: $gray-l3;
-        }
-
-        li.primary {
+        &>li.primary {
             display: table-cell !important;
             float: none !important;
+            vertical-align: middle;
 
             &>a {
                 background-image: none;
@@ -266,11 +249,11 @@ header.global {
         }
         .fa-sort-desc {
             opacity: 0.25;
-            transition: all 0.25s ease-in-out 0s;
-            transform-origin: 50% 50%;
 
             &:hover {
                 opacity: 1;
+                transition: all 0.25s ease-in-out 0s;
+                transform-origin: 50% 50%;
             }
             &:before {
                 content: "\f0d7";
@@ -289,7 +272,7 @@ header.global {
         li {
             margin-top: 3px;
             padding-top: 2px;
-            border-top: 1px solid $edbox-light-gray;
+            border-top: 1px solid $eduardo-light-gray;
 
             &:first-child {
                 padding-top: 0;
@@ -297,12 +280,12 @@ header.global {
 
             &>a {
                 margin: 0;
-                color: $edbox-link-color !important;
+                color: $eduardo-link-color !important;
                 font-size: 14px;
                 transition: color 0.25s ease-in-out 0s;
             }
             &:hover a {
-                color: $edbox-dd-hover !important;
+                color: $eduardo-dd-hover !important;
             }
         }
     }
@@ -377,7 +360,7 @@ header.global {
 .container.faq {
 
   details {
-    border-bottom: solid 1px $edbox-light-gray;
+    border-bottom: solid 1px $eduardo-light-gray;
 
     &:last-child {
       border-bottom-width: 0;
@@ -411,7 +394,7 @@ summary:before {
 }
 
 summary:hover:before {
-    background-color: $edbox-light-gray;
+    background-color: $eduardo-light-gray;
 }
 
 .details {
