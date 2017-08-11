@@ -1,3 +1,6 @@
 // import original styles from edx-platform
 $static-path: '../..';
 @import 'lms/static/sass/lms-course';
+
+// import fixes for course pages
+@import 'course_overrides';

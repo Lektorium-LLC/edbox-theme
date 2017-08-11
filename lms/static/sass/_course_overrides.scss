@@ -1,0 +1,12 @@
+/* Accordion with bookmarks and search bar simultaneously */
+.courseware-bookmarks-button {
+    width: 100%;
+    margin-bottom: ($baseline/10);
+}
+.courseware-search-bar {
+    width: 100%;
+}
+/* Courseware search page */
+.search-results .search-results-item .result-link {
+    top: 0 !important;
+}
