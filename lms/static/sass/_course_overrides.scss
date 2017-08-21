@@ -10,3 +10,8 @@
 .search-results .search-results-item .result-link {
     top: 0 !important;
 }
+/* Fix for problem's "Answer" block */
+.xmodule_display.xmodule_CapaModule div.problem div p.answer:before {
+    display: inline;
+    content: "Ответ: ";
+}

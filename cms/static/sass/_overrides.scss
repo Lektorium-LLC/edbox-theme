@@ -4,7 +4,7 @@ $gray-d1: shade($gray,20%); // #656565
 $gray-l3: tint($gray,60%);  // #cbcbcb
 $m-blue-d1: rgb(23,144,199); // #1790C7
 $m-blue-d3: rgb(18,111,154); // #126F9A
-$eduardo-light-gray: #f2f2f2;
+$eduardo-light-gray: #f5f5f5;
 $footer-link-color: #0075b4;
 
 /***** Common theming *****/
@@ -262,6 +262,11 @@ $eduardo-logo-suffix-color: #b92b6d;
             }
         }
     }
+}
+/* Fix for problem's "Answer" block */
+.xmodule_display.xmodule_CapaModule div.problem div p.answer:before {
+    display: inline;
+    content: "Ответ: ";
 }
 /***** CMS-specific *****/
 .header-global {
