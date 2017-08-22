@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: info@lektorium.tv\n"
 "POT-Creation-Date: 2017-08-15 19:40+0000\n"
-"PO-Revision-Date: 2017-08-16 11:06:35.206353\n"
+"PO-Revision-Date: 2017-08-22 11:11:47.784014\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "Language: ru\n"
@@ -2142,7 +2142,7 @@ msgstr ""
 #: lms/templates/survey/survey.html
 #: themes/stanford-style/lms/templates/register-shib.html
 msgid "Submit"
-msgstr "Отправить на рассмотрение"
+msgstr "Отправить"
 
 #: common/lib/xmodule/xmodule/capa_base.py
 msgid "Submitting"
@@ -3139,7 +3139,7 @@ msgstr "О нас"
 
 #: common/lib/xmodule/xmodule/course_module.py cms/templates/settings.html
 msgid "None"
-msgstr "Ничего"
+msgstr "Нет"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Entrance Exam Enabled"
@@ -11483,7 +11483,7 @@ msgstr "Пред"
 
 #: common/templates/datepicker_defaults.html lms/templates/seq_module.html
 msgid "Next"
-msgstr "Следующее"
+msgstr "Вперёд"
 
 #: common/templates/datepicker_defaults.html
 msgid "Today"
@@ -12778,8 +12778,8 @@ msgstr "Нужна помощь в регистрации на {platform_name}?"
 #: themes/stanford-style/lms/templates/register-sidebar.html
 msgid "View our FAQs for answers to commonly asked questions."
 msgstr ""
-"Посетите наш раздел FAQ для того, чтобы прочитать ответы на часто задаваемые "
-"вопросы."
+"Посетите наш раздел «Вопросы и ответы» для того, чтобы прочитать ответы на "
+"часто задаваемые вопросы."
 
 #: lms/templates/register-sidebar.html
 msgid ""
@@ -12821,7 +12821,7 @@ msgstr ""
 
 #: lms/templates/seq_module.html
 msgid "Previous"
-msgstr "Предыдущее"
+msgstr "Назад"
 
 #: lms/templates/signup_modal.html
 msgid "Sign Up for {platform_name}"
@@ -19324,7 +19324,7 @@ msgstr ""
 #: lms/templates/static_templates/faq.html
 #: themes/red-theme/lms/templates/footer.html
 msgid "FAQ"
-msgstr "FAQ"
+msgstr "Вопросы и ответы"
 
 #: lms/templates/static_templates/jobs.html
 #: themes/red-theme/lms/templates/footer.html
@@ -22632,7 +22632,7 @@ msgstr ""
 
 #: cms/templates/settings.html
 msgid "Course Card Image"
-msgstr "Изображение карты курса"
+msgstr "Изображение для «визитной карточки» курса"
 
 #: cms/templates/settings.html
 msgid ""
@@ -27039,7 +27039,7 @@ msgid ""
 "instructor selected, you'll move to the next step. If you don't select the "
 "same options, you'll review the response and try again."
 msgstr ""
-"Перед тем, как начать оценивать работы своих однокурсников, вам необходимо "
+"Перед тем как начать оценивать работы своих однокурсников, вам необходимо "
 "научиться ставить оценки на примере ответов, уже оцененных преподавателями. "
 "Если вы выберете те же варианты оценок ответа, которые выбрал преподаватель, "
 "вы перейдёте к следующему ответу. Если вы выберете другие варианты, вам "
@@ -27805,3 +27805,7 @@ msgstr "Научитесь создавать и поддерживать кур
 
 msgid "Online course from Eduardo"
 msgstr "Онлайн-курс от Eduardo"
+
+#: lms/templates/index.html
+msgid "Courses from Eduardo creators"
+msgstr "Курсы от создателей Eduardo"

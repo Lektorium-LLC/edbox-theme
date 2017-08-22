@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: info@lektorium.tv\n"
 "POT-Creation-Date: 2017-08-15 19:39+0000\n"
-"PO-Revision-Date: 2017-08-16 11:06:35.235206\n"
+"PO-Revision-Date: 2017-08-22 11:11:47.815166\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "Language: ru\n"
@@ -6558,7 +6558,7 @@ msgstr "Оставить анонимное сообщение для однок
 #: test_root/staticfiles/xmodule_js/common_static/common/templates/discussion/thread-response.underscore
 #: test_root/staticfiles/xmodule_js/common_static/common/templates/discussion/thread.underscore
 msgid "Submit"
-msgstr "Отправить на рассмотрение"
+msgstr "Отправить"
 
 #: common/static/common/templates/discussion/post-user-display.underscore
 #: common/static/common/templates/discussion/thread-list-item.underscore
