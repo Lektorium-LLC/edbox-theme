@@ -1,6 +1,7 @@
 ## mako
 <%namespace name='static' file='static_content.html'/>
 <%namespace file='main.html' import="login_query"/>
+<%page expression_filter="h"/>
 <%!
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _, pgettext
