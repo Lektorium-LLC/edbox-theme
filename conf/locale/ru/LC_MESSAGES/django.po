@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: info@lektorium.tv\n"
 "POT-Creation-Date: 2017-08-15 19:40+0000\n"
-"PO-Revision-Date: 2017-08-25 13:21:03.278319\n"
+"PO-Revision-Date: 2017-08-28 18:14:45.138316\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "Language: ru\n"
@@ -7169,7 +7169,7 @@ msgstr "Цена CourseMode успешно обновлена"
 
 #: lms/djangoapps/instructor/views/instructor_dashboard.py
 msgid "Course Info"
-msgstr "Новости"
+msgstr "О курсе"
 
 #: lms/djangoapps/instructor/views/instructor_dashboard.py
 #, python-brace-format
@@ -15002,7 +15002,7 @@ msgstr "Вспомогательные материалы курса"
 
 #: lms/templates/courseware/courseware-error.html
 msgid "Courseware"
-msgstr "Видео и задания"
+msgstr "Содержание"
 
 #: lms/templates/courseware/courseware.html
 msgid "Bookmarks"
@@ -15065,8 +15065,8 @@ msgstr ""
 "Пока вы не записаны на этот курс. {link_start}Записаться сейчас!{link_end}"
 
 #: lms/templates/courseware/info.html
-msgid "Welcome to {org}'s {course_name}!"
-msgstr "Добро пожаловать на {org} {course_name}!"
+msgid "Welcome to {course_name}!"
+msgstr "Добро пожаловать на курс «{course_name}»!"
 
 #: lms/templates/courseware/info.html
 msgid "Resume Course"
