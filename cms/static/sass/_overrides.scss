@@ -442,3 +442,10 @@ $eduardo-logo-suffix-color: #b92b6d;
     @include margin-left(0);
     }
 }
+/* ORA editor header fix */
+#openassessment-editor #openassessment_editor_header .editor_tabs {
+    width: 45% !important;
+    max-width: 450px !important;
+    font-size: 90%;
+    margin-top: 3px;
+}
