@@ -1,0 +1,28 @@
+// import original styles from edx-platform
+$static-path: '../../..';
+@import 'lms/static/sass/discussion/lms-discussion-main';
+
+// add overrides
+@import '../overrides';
+@import '../course_overrides';
+
+// additional overrides, separate file not required
+.header-global .dropdown-menu-container {
+    display: table;
+    height: 100%;
+
+    .menu-title, .user-menu {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+.wrapper-footer {
+    #footer-openedx {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .nav-colophon ol, footer#footer-openedx ul {
+        margin-left: 0;
+    }
+}

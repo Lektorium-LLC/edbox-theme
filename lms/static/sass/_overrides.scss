@@ -33,6 +33,8 @@ $eduardo-logo-suffix-color: #b92b6d;
         h1.logo-beta img {
             height: 51px !important;
             padding-top: 3px;
+            margin-top: 0;
+            box-sizing: content-box;
         }
 
         h1.logo {
@@ -188,10 +190,14 @@ $eduardo-logo-suffix-color: #b92b6d;
     }
     .footer-about-openedx {
         width: 270px !important;
+        min-width: 270px;
         float: none !important;
         a {
             float: none !important;
             vertical-align: bottom;
+        }
+        p {
+            margin-bottom: 0;
         }
     }
     .about-openedx {
