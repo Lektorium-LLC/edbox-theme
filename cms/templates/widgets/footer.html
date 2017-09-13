@@ -1,6 +1,7 @@
 ## mako
 <%!
 from django.utils.translation import ugettext as _
+from django.utils.http import urlquote_plus
 from django.core.urlresolvers import reverse
 from django.conf import settings
 from edxmako.shortcuts import marketing_link
@@ -31,7 +32,7 @@ def get_marketing_link(link_name):
             % endif
             % if is_marketing_link_set('HELP'):
             <li class="nav-colophon-04">
-              <a id="support" href="${get_marketing_link('HELP')}">${_('Support')}</a>
+              <a id="support" href="${get_marketing_link('HELP')}?from=${urlquote_plus(request.build_absolute_uri())}">${_('Support')}</a>
             </li>
             % endif
             % if is_marketing_link_set('CONTACT'):

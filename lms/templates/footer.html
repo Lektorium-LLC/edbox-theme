@@ -5,6 +5,7 @@
   from django.utils.translation import ugettext as _
   from branding.api import get_footer
   from edxmako.shortcuts import marketing_link
+  from django.utils.http import urlquote_plus
 %>
 <% footer = get_footer(is_secure=is_secure) %>
 <%namespace name='static' file='static_content.html'/>
@@ -38,7 +39,7 @@
             % endif
             % if marketing_link('HELP') != '#':
             <li class="nav-colophon-04">
-              <a id="support" href="${marketing_link('HELP')}">${_('Support')}</a>
+              <a id="support" href="${marketing_link('HELP')}?from=${urlquote_plus(request.build_absolute_uri())}">${_('Support')}</a>
             </li>
             % endif
             % if marketing_link('CONTACT') != '#':
