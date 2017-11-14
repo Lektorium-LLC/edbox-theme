@@ -464,3 +464,7 @@ summary:hover:before {
     margin: 5px 5px 0 0 ;
     width: 90%;
 }
+/* Hide certificate message on progress page */
+.wrapper-msg.wrapper-auto-cert {
+    display: none;
+}
